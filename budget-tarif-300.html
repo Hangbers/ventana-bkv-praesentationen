@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bKV Budget-Tarif 300 € | Ventana Deutschland</title>
+    <style>
+        :root {
+            --primary: #1d1d1b;
+            --primary-light: #333331;
+            --accent: #f59c00;
+            --accent-dark: #c2710a;
+            --accent-glow: rgba(245,156,0,0.14);
+            --signal: #003d7a;
+            --signal-light: #e8f0fa;
+            --dkv: #00857c;
+            --dkv-light: #e6f5f4;
+            --allianz: #003781;
+            --hallesche: #8B4513;
+            --barmenia: #006633;
+            --bg-light: #f5f9fa;
+            --bg-warm: #fff6ea;
+            --text: #1d1d1b;
+            --text-light: #5a5a58;
+            --text-muted: #8a8a88;
+            --white: #ffffff;
+            --green: #16a34a;
+            --green-light: #e9f7ef;
+            --border: #e5e7eb;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: var(--white);
+        }
+
+        /* ── Header ── */
+        .header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-bottom: 3px solid var(--accent);
+        }
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img { height: 38px; }
+        .header-badge {
+            background: var(--bg-warm);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid rgba(245,156,0,0.3);
+        }
+
+        /* ── Sections ── */
+        .section { padding: 70px 30px; }
+        .section-inner { max-width: 1300px; margin: 0 auto; }
+        .section-eyebrow {
+            display: inline-block;
+            color: var(--accent-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .section h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        .section .lead {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 750px;
+            margin-bottom: 35px;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a2a28 60%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 65px 30px 75px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-inner { max-width: 1300px; margin: 0 auto; position: relative; z-index: 2; }
+        .hero-eyebrow {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 15px;
+            max-width: 780px;
+        }
+        .hero h1 em { color: var(--accent); font-style: normal; }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 640px;
+            line-height: 1.8;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 45px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+        .hero-stat .num { font-size: 2rem; font-weight: 800; color: var(--accent); }
+        .hero-stat .lbl { font-size: 0.85rem; opacity: 0.75; }
+
+        /* ── Was ist das Budget ── */
+        .intro-section { background: var(--white); }
+        .intro-flow {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .flow-card {
+            background: var(--bg-light);
+            border-radius: var(--radius-lg);
+            padding: 28px 25px;
+            border-top: 4px solid var(--accent);
+        }
+        .flow-num {
+            width: 38px; height: 38px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+        .flow-card h4 { color: var(--primary); font-size: 1.05rem; margin-bottom: 6px; }
+        .flow-card p { font-size: 0.9rem; color: var(--text-light); }
+
+        .info-strip {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: var(--radius-lg);
+            padding: 30px 35px;
+            color: white;
+            margin-top: 30px;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .info-strip-icon { font-size: 2.3rem; flex-shrink: 0; }
+        .info-strip h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 4px; }
+        .info-strip p { opacity: 0.9; font-size: 0.95rem; }
+
+        /* ── Budget-Leistungen ── */
+        .budget-section { background: var(--bg-light); }
+        .budget-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        .budget-header {
+            background: linear-gradient(135deg, var(--signal) 0%, #005baa 100%);
+            padding: 25px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .budget-header h3 { font-size: 1.3rem; }
+        .budget-header p { opacity: 0.85; font-size: 0.9rem; margin-top: 3px; }
+        .budget-price-tag {
+            background: rgba(255,255,255,0.15);
+            border-radius: 14px;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .budget-price-tag .amt { font-size: 1.6rem; font-weight: 800; }
+        .budget-price-tag .sub { font-size: 0.7rem; opacity: 0.85; }
+        .budget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 0;
+            padding: 0;
+        }
+        .budget-item {
+            padding: 20px 25px;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .budget-item .bi-icon { color: var(--accent); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+        .budget-item h4 { font-size: 0.92rem; color: var(--primary); margin-bottom: 2px; }
+        .budget-item p { font-size: 0.82rem; color: var(--text-light); }
+
+        /* ── Vorteile AN/AG ── */
+        .vorteile-section { background: var(--white); }
+        .vorteile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .vorteile-col {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .vorteile-col-head {
+            padding: 22px 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .vorteile-col-head.an { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%); }
+        .vorteile-col-head.ag { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+        .vorteile-col-head .vc-icon { font-size: 1.8rem; }
+        .vorteile-col-head h3 { font-size: 1.2rem; }
+        .vorteile-col-head p { font-size: 0.82rem; opacity: 0.85; }
+        .vorteile-list { list-style: none; padding: 12px 30px 25px; background: var(--white); }
+        .vorteile-list li {
+            padding: 13px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .vorteile-list li:last-child { border-bottom: none; }
+        .vorteile-list .vl-check {
+            color: var(--accent);
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .vorteile-col-head.ag ~ .vorteile-list .vl-check { color: var(--primary); }
+        .vorteile-list h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 1px; }
+        .vorteile-list p { font-size: 0.84rem; color: var(--text-light); line-height: 1.55; }
+
+        /* ── Head-to-Head Vergleich ── */
+        .h2h-section { background: var(--bg-light); }
+        .h2h-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        .h2h-table { width: 100%; border-collapse: collapse; }
+        .h2h-table th {
+            padding: 18px 22px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .h2h-table th:first-child { background: var(--primary); color: white; text-align: left; width: 34%; }
+        .h2h-table th.col-signal { background: var(--signal); color: white; text-align: center; }
+        .h2h-table th.col-dkv { background: var(--dkv); color: white; text-align: center; }
+        .h2h-table th small { display: block; font-weight: 500; opacity: 0.85; text-transform: none; letter-spacing: 0; margin-top: 2px; }
+        .h2h-table td {
+            padding: 13px 22px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+        .h2h-table td:nth-child(2), .h2h-table td:nth-child(3) { text-align: center; }
+        .h2h-table tr:nth-child(even) { background: var(--bg-light); }
+        .h2h-table td:first-child { font-weight: 600; color: var(--primary); }
+        .val-yes { color: var(--green); font-weight: 700; }
+        .val-no { color: #dc2626; font-weight: 600; }
+        .val-plus { color: var(--accent-dark); font-weight: 700; }
+        .win-cell { background: var(--accent-glow) !important; font-weight: 700; }
+        .h2h-price-row td { font-size: 1.05rem; font-weight: 800; color: var(--primary); background: var(--bg-warm) !important; padding: 18px 22px; }
+        .price-pill {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+        .price-pill.muted { background: var(--text-muted); }
+        .h2h-fazit {
+            background: linear-gradient(135deg, var(--bg-warm) 0%, #ffe9c7 100%);
+            padding: 20px 30px;
+            font-size: 0.95rem;
+            color: var(--primary);
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .h2h-fazit .fz-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+        /* ── Empfehlung ── */
+        .empfehlung-section { background: var(--white); }
+        .empfehlung-card {
+            background: linear-gradient(135deg, var(--signal) 0%, #005baa 100%);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-top: 30px;
+            color: white;
+        }
+        .empfehlung-head {
+            padding: 30px 38px 26px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .empfehlung-head .eh-badge {
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+        .empfehlung-head h3 { font-size: 1.5rem; line-height: 1.25; }
+        .empfehlung-head p { font-size: 0.9rem; opacity: 0.85; margin-top: 2px; }
+        .empfehlung-body {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .empf-reason {
+            padding: 28px 32px;
+            border-right: 1px solid rgba(255,255,255,0.15);
+        }
+        .empf-reason:last-child { border-right: none; }
+        .empf-reason .er-icon { font-size: 1.7rem; margin-bottom: 10px; }
+        .empf-reason h4 { font-size: 1.05rem; margin-bottom: 6px; color: #ffd9a0; }
+        .empf-reason p { font-size: 0.88rem; opacity: 0.9; line-height: 1.6; }
+        .empf-reason .er-num { font-size: 1.6rem; font-weight: 800; color: #ffd9a0; }
+        .empfehlung-foot {
+            background: rgba(0,0,0,0.18);
+            padding: 18px 38px;
+            font-size: 0.88rem;
+            opacity: 0.92;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* ── Marktvergleich (Hintergrund) ── */
+        .markt-section { background: var(--bg-light); }
+        .collapse-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 7px 18px;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 18px;
+        }
+        .markt-table-wrap {
+            overflow-x: auto;
+            margin-top: 18px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        .markt-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+            background: var(--white);
+        }
+        .markt-table thead th {
+            padding: 16px 14px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        .markt-table thead th:first-child {
+            text-align: left;
+            background: var(--primary);
+            min-width: 200px;
+            position: sticky;
+            left: 0;
+            z-index: 3;
+        }
+        .markt-table thead th:nth-child(2) { background: var(--signal); }
+        .markt-table thead th:nth-child(3) { background: var(--allianz); }
+        .markt-table thead th:nth-child(4) { background: var(--dkv); }
+        .markt-table thead th:nth-child(5) { background: var(--hallesche); }
+        .markt-table thead th:nth-child(6) { background: var(--barmenia); }
+        .markt-table tbody td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.82rem;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .markt-table tbody td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--white);
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+        .markt-table tbody tr:nth-child(even) td { background: var(--bg-light); }
+        .markt-table tbody tr:nth-child(even) td:first-child { background: var(--bg-light); }
+        .markt-table .cat-row td {
+            background: var(--primary) !important;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.75rem;
+            padding: 8px 14px;
+        }
+        .markt-table .price-row td {
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--primary);
+            background: var(--bg-warm) !important;
+        }
+        .markt-table .price-row td:first-child { background: var(--bg-warm) !important; }
+        .markt-table .highlight-300 td { box-shadow: inset 0 0 0 2px var(--accent); }
+        .mv-yes { color: var(--green); font-weight: 700; }
+        .mv-no { color: #dc2626; font-weight: 600; }
+        .mv-special { color: var(--accent-dark); font-weight: 600; font-size: 0.78rem; }
+        .mv-highlight { background: var(--accent-glow) !important; font-weight: 700; }
+
+        /* ── Corporate Well-Being (Fundament + Säulen) ── */
+        .strategie-section { background: var(--white); }
+        .cwb-intro-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-glow);
+            color: var(--accent-dark);
+            border-radius: 30px;
+            padding: 7px 18px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+        .cwb-structure { margin-top: 18px; }
+        .cwb-pillars {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            align-items: stretch;
+        }
+        .cwb-pillar {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: var(--radius) var(--radius) 0 0;
+            border-bottom: none;
+            padding: 26px 22px 24px;
+            text-align: center;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cwb-pillar p { flex-grow: 1; }
+        .cwb-pillar .cp-icon {
+            width: 52px; height: 52px;
+            margin: 0 auto 14px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+        .cwb-pillar h4 { font-size: 1rem; color: var(--primary); margin-bottom: 6px; }
+        .cwb-pillar p { font-size: 0.83rem; color: var(--text-light); line-height: 1.55; }
+        .cwb-pillar .cp-budget {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            background: var(--accent-glow);
+            border-radius: 20px;
+            padding: 4px 12px;
+        }
+        .cwb-base {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            padding: 22px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: var(--shadow-lg);
+        }
+        .cwb-base .cb-main { display: flex; align-items: center; gap: 16px; }
+        .cwb-base .cb-icon { font-size: 1.8rem; flex-shrink: 0; }
+        .cwb-base h4 { font-size: 1.12rem; }
+        .cwb-base p { font-size: 0.86rem; opacity: 0.9; }
+        .cwb-base .cb-reach { text-align: center; flex-shrink: 0; }
+        .cwb-base .cb-reach .num { font-size: 1.9rem; font-weight: 800; line-height: 1; }
+        .cwb-base .cb-reach .lbl { font-size: 0.72rem; opacity: 0.9; }
+        .cwb-followup {
+            background: var(--bg-light);
+            border-radius: var(--radius);
+            padding: 20px 28px;
+            margin-top: 26px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            border-left: 4px solid var(--primary);
+        }
+        .cwb-followup .cf-icon { font-size: 1.7rem; flex-shrink: 0; }
+        .cwb-followup h4 { font-size: 1rem; color: var(--primary); margin-bottom: 2px; }
+        .cwb-followup p { font-size: 0.9rem; color: var(--text-light); }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a2a28 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 30px;
+        }
+        .cta-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 12px; }
+        .cta-section h2 em { color: var(--accent); font-style: normal; }
+        .cta-section p { opacity: 0.85; max-width: 620px; margin: 0 auto; }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 35px 30px;
+            text-align: center;
+            font-size: 0.82rem;
+        }
+        .footer-inner { max-width: 1300px; margin: 0 auto; }
+        .footer-divider { width: 50px; height: 2px; background: var(--accent); margin: 12px auto; }
+
+        @media (max-width: 900px) {
+            .intro-flow { grid-template-columns: 1fr; }
+            .vorteile-grid { grid-template-columns: 1fr; }
+            .info-strip { flex-direction: column; text-align: center; }
+            .hero-stats { gap: 28px; }
+            .empfehlung-body { grid-template-columns: 1fr; }
+            .empf-reason { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+            .empfehlung-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .cwb-pillars { grid-template-columns: 1fr 1fr; }
+            .cwb-base { justify-content: flex-start; }
+        }
+        @media (max-width: 600px) {
+            .header-badge { display: none; }
+            .hero { padding: 45px 20px 55px; }
+            .section { padding: 45px 20px; }
+        }
+        @media print {
+            .header { position: relative; }
+            .section { padding: 30px 15px; }
+            .flow-card, .vorteile-col, .budget-card, .h2h-card { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="header-inner">
+        <a href="https://ventana-deutschland.de/" class="logo" style="display:inline-flex;align-items:center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="180" height="45" viewBox="0 0 220.342 54.765" style="display:block;">
+                <g transform="translate(0 0)">
+                    <path d="M91.1,95.524a24.676,24.676,0,0,1-11.762,5.785h9.391l4.709-8.156.02-.033c-.033.04-.066.08-.1.126A13.089,13.089,0,0,1,91.1,95.524Z" transform="translate(-44.06 -50.436)" fill="#004899"/>
+                    <path d="M46.358,37.855A24.743,24.743,0,0,1,58.113,32.07H48.722l-4.709,8.156L44,40.259a1.459,1.459,0,0,0,.093-.12A13.65,13.65,0,0,1,46.358,37.855Z" transform="translate(-32.191 -29.932)" fill="#004899"/>
+                    <path d="M107.6,56.53a24.794,24.794,0,0,1,0,16.245l4.689-8.122Z" transform="translate(-53.551 -38.147)" fill="#004899"/>
+                    <path d="M93.37,40.139a1.459,1.459,0,0,0,.093.12l-.02-.033L88.735,32.07H79.35A24.691,24.691,0,0,1,91.1,37.855,13.442,13.442,0,0,1,93.37,40.139Z" transform="translate(-44.063 -29.932)" fill="#004899"/>
+                    <path d="M30.38,52.992,40.156,36.05A28.237,28.237,0,0,0,30.38,52.992Z" transform="translate(-27.617 -31.269)" fill="#004899"/>
+                    <path d="M40.156,92.9,30.38,75.96A28.237,28.237,0,0,0,40.156,92.9Z" transform="translate(-27.617 -44.672)" fill="#004899"/>
+                    <path d="M34.619,56.53,29.93,64.652l4.689,8.122a24.794,24.794,0,0,1,0-16.245Z" transform="translate(-27.466 -38.147)" fill="#004899"/>
+                    <path d="M67.343,110.427a28.218,28.218,0,0,0,9.8-1.747H57.54A28.373,28.373,0,0,0,67.343,110.427Z" transform="translate(-36.739 -55.662)" fill="#004899"/>
+                    <path d="M99.5,36.05l9.776,16.942A28.237,28.237,0,0,0,99.5,36.05Z" transform="translate(-50.831 -31.269)" fill="#004899"/>
+                    <path d="M109.276,75.97,99.5,92.906A28.24,28.24,0,0,0,109.276,75.97Z" transform="translate(-50.831 -44.676)" fill="#004899"/>
+                    <path d="M44.1,93.253c-.033-.04-.066-.086-.1-.133l.02.033,4.709,8.156H58.12a24.686,24.686,0,0,1-11.762-5.791A13.247,13.247,0,0,1,44.1,93.253Z" transform="translate(-32.191 -50.436)" fill="#004899"/>
+                    <path d="M83.28,49.562h0a9.411,9.411,0,0,1,8.867,6.283A11.37,11.37,0,0,0,76.99,40.7,9.386,9.386,0,0,1,83.28,49.562Z" transform="translate(-43.271 -32.46)" fill="#f59c00"/>
+                    <path d="M53.106,79.743a9.393,9.393,0,0,1-8.86-6.283A11.357,11.357,0,0,0,59.389,88.6,9.393,9.393,0,0,1,53.106,79.743Z" transform="translate(-31.906 -43.833)" fill="#f59c00"/>
+                    <path d="M83.286,79.743A9.4,9.4,0,0,1,77.01,88.6,11.369,11.369,0,0,0,92.153,73.46,9.408,9.408,0,0,1,83.286,79.743Z" transform="translate(-43.277 -43.833)" fill="#f59c00"/>
+                    <path d="M53.106,49.562h0A9.392,9.392,0,0,1,59.4,40.7,11.376,11.376,0,0,0,44.246,55.845,9.393,9.393,0,0,1,53.106,49.562Z" transform="translate(-31.906 -32.46)" fill="#f59c00"/>
+                    <path d="M40.795,62.093A13.534,13.534,0,0,1,39.22,48.91L36.3,53.971a24.794,24.794,0,0,0,0,16.245l2.922,5.061a13.534,13.534,0,0,1,1.574-13.183Z" transform="translate(-29.146 -35.587)" fill="#f59c00"/>
+                    <path d="M105.326,53.971,102.4,48.91a13.534,13.534,0,0,1-1.574,13.183A13.534,13.534,0,0,1,102.4,75.276l2.922-5.061a24.794,24.794,0,0,0,0-16.245Z" transform="translate(-51.277 -35.587)" fill="#f59c00"/>
+                    <path d="M72.021,99.665a13.435,13.435,0,0,1-8.036-2.65A13.51,13.51,0,0,1,47.54,96.73,24.716,24.716,0,0,0,59.3,102.521h9.365a24.766,24.766,0,0,0,11.762-5.785A13.488,13.488,0,0,1,72.021,99.665Z" transform="translate(-33.38 -51.648)" fill="#f59c00"/>
+                    <path d="M55.952,34.926a13.474,13.474,0,0,1,8.036,2.643,13.526,13.526,0,0,1,16.438.286A24.811,24.811,0,0,0,68.677,32.07H59.306A24.743,24.743,0,0,0,47.55,37.855,13.455,13.455,0,0,1,55.952,34.926Z" transform="translate(-33.384 -29.932)" fill="#f59c00"/>
+                    <path d="M80.341,57.878a13.534,13.534,0,0,0,1.574-13.183l-1.733-3c-.033-.04-.06-.08-.093-.12a13.65,13.65,0,0,0-2.265-2.285A13.526,13.526,0,0,0,61.385,39a13.526,13.526,0,0,0-16.438.286,13.65,13.65,0,0,0-2.265,2.285,1.459,1.459,0,0,0-.093.12l-1.733,3A13.534,13.534,0,0,0,42.43,57.878a13.534,13.534,0,0,0-1.574,13.183l1.727,3c.033.046.066.086.1.133a13.513,13.513,0,0,0,18.7,2.557,13.514,13.514,0,0,0,18.7-2.557c.033-.04.066-.08.1-.126l1.733-3a13.528,13.528,0,0,0,1.036-5.2A13.375,13.375,0,0,0,80.341,57.878ZM69.382,77.251a11.286,11.286,0,0,1-4.868-1.109,9.237,9.237,0,0,1-6.25,0A11.369,11.369,0,0,1,43.121,61a9.218,9.218,0,0,1,0-6.243A11.374,11.374,0,0,1,53.4,38.512a11.432,11.432,0,0,1,4.882,1.1,9.268,9.268,0,0,1,6.223,0A11.372,11.372,0,0,1,79.656,54.75a9.217,9.217,0,0,1,0,6.243A11.385,11.385,0,0,1,69.382,77.251Z" transform="translate(-30.788 -31.372)" fill="#c51a1b"/>
+                    <path d="M72.194,68.653a9.4,9.4,0,0,0,0-18.808h0a9.4,9.4,0,0,0-6.29-8.866,9.268,9.268,0,0,0-6.223,0,9.413,9.413,0,0,0-6.3,8.866h0a9.4,9.4,0,0,0,0,18.808,9.4,9.4,0,0,0,18.809,0Zm-8.8,7.226a5.516,5.516,0,0,1-1.209,0,7.117,7.117,0,0,1-5.811-10.221,7.118,7.118,0,0,1-10.221-5.8c-.02-.2-.033-.405-.033-.611s.013-.412.033-.611a7.118,7.118,0,0,1,10.221-5.8,7.117,7.117,0,0,1,5.818-10.221c.193-.013.392-.027.591-.027s.4.013.6.027a7.117,7.117,0,0,1,5.811,10.221,7.118,7.118,0,0,1,10.221,5.8c.02.2.033.405.033.611s-.013.405-.033.611a7.118,7.118,0,0,1-10.221,5.8,7.118,7.118,0,0,1-5.8,10.221Z" transform="translate(-32.185 -32.743)" fill="#009760"/>
+                    <path d="M70.283,66.749a7.118,7.118,0,0,0,10.221-5.8c.02-.2.033-.405.033-.611s-.013-.405-.033-.611a7.118,7.118,0,0,0-10.221-5.8A7.117,7.117,0,0,0,64.472,43.7a5.912,5.912,0,0,0-.6-.027c-.2,0-.4.013-.591.027a7.117,7.117,0,0,0-5.818,10.221,7.118,7.118,0,0,0-10.221,5.8c-.02.2-.033.405-.033.611s.013.405.033.611a7.118,7.118,0,0,0,10.221,5.8A7.117,7.117,0,0,0,63.276,76.97a5.516,5.516,0,0,0,1.209,0,7.106,7.106,0,0,0,5.8-10.221ZM54.715,64.763H52.889a10.985,10.985,0,0,1,21.971,0H54.715Z" transform="translate(-33.27 -33.828)" fill="#d0e5de"/>
+                    <path d="M84.666,50.574,74.89,33.632,72.127,28.85h-30.6l-2.763,4.782L28.983,50.574,26.22,55.356l2.763,4.782L38.759,77.08l2.763,4.782h30.6L74.89,77.08l9.776-16.942,2.763-4.788Zm-4.4,12.9-2.922,5.061-1.733,3-.02.033-4.709,8.156H42.751l-4.709-8.156-.013-.033-1.727-3L33.38,63.478l-4.689-8.122,4.689-8.122L36.3,42.173l1.727-3,.02-.033,4.709-8.156H70.9l4.709,8.156.02.033,1.733,3,2.922,5.061,4.689,8.122Z" transform="translate(-26.22 -28.85)" fill="#ffdb00"/>
+                    <path d="M67.763,61.64a9.156,9.156,0,0,0-8.973,7.332H76.736A9.156,9.156,0,0,0,67.763,61.64Z" transform="translate(-37.158 -39.862)" fill="#a8bbcf"/>
+                    <path d="M77.731,69.875a10.985,10.985,0,0,0-21.971,0H77.731ZM57.772,68.048a9.156,9.156,0,0,1,17.946,0Z" transform="translate(-36.141 -38.939)" fill="#004899"/>
+                    <path d="M142.511,49.95l7.7,23.112,7.552-23.112h2.271l-8.86,25.921H149.02L140.2,49.95Z" transform="translate(-64.499 -35.937)"/>
+                    <path d="M188.652,61.387v1.926h-10.48v10.4h11.4v1.926h-13.6V49.95h13.443v1.926H178.172v9.51Z" transform="translate(-76.515 -35.937)"/>
+                    <path d="M206.821,49.95l12.945,22.494V49.95H221.8v25.7h-2.544L206.469,53.224V75.646H204.39V49.95Z" transform="translate(-86.056 -35.937)"/>
+                    <path d="M252.538,49.95v1.926H245.91v23.77h-2.192V51.876H237.05V49.95Z" transform="translate(-97.025 -35.937)"/>
+                    <path d="M270.673,49.66l8.9,25.882h-2.311l-2.5-7.279H264.9l-2.544,7.279H260.08l8.9-25.882Zm-.85,3.121-4.317,13.562h8.588Z" transform="translate(-104.76 -35.839)"/>
+                    <path d="M298.351,49.95,311.3,72.444V49.95h2.039v25.7h-2.544L298,53.224V75.646H295.92V49.95Z" transform="translate(-116.795 -35.937)"/>
+                    <path d="M339.223,49.66l8.9,25.882h-2.311l-2.5-7.279h-9.863L330.9,75.542H328.63l8.9-25.882Zm-.843,3.121-4.317,13.562h8.588Z" transform="translate(-127.781 -35.839)"/>
+                </g>
+            </svg>
+        </a>
+        <div class="header-badge">Budget-Tarif 300 &euro; &mdash; Ventana Deutschland</div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-eyebrow">Betriebliche Krankenversicherung &middot; Budget-Tarif</div>
+        <h1>300 &euro; Gesundheitsbudget &mdash; <em>f&uuml;r jeden Mitarbeitenden, jedes Jahr</em></h1>
+        <p class="hero-subtitle">
+            Das Fundament des bKV-Konzepts der Ventana Deutschland: ein j&auml;hrliches Gesundheitsbudget von 300 &euro;, frei einsetzbar f&uuml;r Zahn, Sehhilfen, Vorsorge, Naturheilkunde und mehr &mdash; ohne Gesundheitspr&uuml;fung, ohne Wartezeit.
+        </p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="num">300 &euro;</div>
+                <div class="lbl">Budget pro Jahr &amp; Mitarbeiter</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">ab 13,00 &euro;</div>
+                <div class="lbl">Monatsbeitrag (Signal Iduna)</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">0 &euro;</div>
+                <div class="lbl">Kosten f&uuml;r Mitarbeitende</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">100 %</div>
+                <div class="lbl">steuerfrei bis 50 &euro;/Monat</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Was ist das Budget -->
+<section class="section intro-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">So funktioniert der Budget-Tarif</span>
+        <h2>Ein Topf, frei verwendbar &mdash; die Mitarbeitenden entscheiden selbst</h2>
+        <p class="lead">Statt fester Erstattungss&auml;tze je Leistung erh&auml;lt jede versicherte Person ein j&auml;hrliches Budget. Es kann flexibel &uuml;ber alle Leistungsbereiche hinweg eingesetzt werden &mdash; ganz nach individuellem Bedarf, ohne Sublimits je Leistung.</p>
+
+        <div class="intro-flow">
+            <div class="flow-card">
+                <div class="flow-num">1</div>
+                <h4>Arbeitgeber zahlt</h4>
+                <p>Die Ventana Deutschland schlie&szlig;t den Gruppenvertrag ab und zahlt den Beitrag direkt an den Versicherer. F&uuml;r Mitarbeitende entstehen keine Kosten.</p>
+            </div>
+            <div class="flow-card">
+                <div class="flow-num">2</div>
+                <h4>Mitarbeitende w&auml;hlen</h4>
+                <p>Brille, professionelle Zahnreinigung, Heilpraktiker, Vorsorge &mdash; jeder setzt die 300 &euro; dort ein, wo der eigene Bedarf liegt. Volles Budget sofort verf&uuml;gbar.</p>
+            </div>
+            <div class="flow-card">
+                <div class="flow-num">3</div>
+                <h4>Rechnung einreichen</h4>
+                <p>Beleg per App oder Portal hochladen &mdash; die Erstattung erfolgt unkompliziert bis zur H&ouml;he des Budgets. Keine Vorleistung gr&ouml;&szlig;eren Umfangs n&ouml;tig.</p>
+            </div>
+        </div>
+
+        <div class="info-strip">
+            <div class="info-strip-icon">&#128161;</div>
+            <div>
+                <h3>Budget-Tarif f&uuml;r alle &mdash; das Fundament</h3>
+                <p><strong>Unabh&auml;ngig von der Betriebszugeh&ouml;rigkeit</strong> sollen alle Mitarbeitenden die bKV aktiv erleben. Das 300-&euro;-Budget steht vom ersten Tag nach der Probezeit zur Verf&uuml;gung &mdash; sp&auml;tere Treuestufen bauen darauf auf.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Budget-Leistungen -->
+<section class="section budget-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Leistungsprofil</span>
+        <h2>Was die 300 &euro; abdecken</h2>
+        <p class="lead">Das Budget ist frei kombinierbar &uuml;ber alle wichtigen Gesundheitsbereiche. F&uuml;r gesetzlich <strong>und</strong> privat Versicherte abschlie&szlig;bar &mdash; ohne Gesundheitspr&uuml;fung, ohne Wartezeit.</p>
+
+        <div class="budget-card">
+            <div class="budget-header">
+                <div>
+                    <h3>GesundAKTIV+ &mdash; der Referenztarif</h3>
+                    <p>Budget 300 &euro;/Jahr &middot; inkl. Assistance-Leistungen &middot; ohne Gesundheitspr&uuml;fung</p>
+                </div>
+                <div class="budget-price-tag">
+                    <div class="amt">13,00 &euro;</div>
+                    <div class="sub">pro Monat (Signal Iduna)</div>
+                </div>
+            </div>
+            <div class="budget-grid">
+                <div class="budget-item">
+                    <span class="bi-icon">&#129463;</span>
+                    <div><h4>Zahnersatz</h4><p>Implantate, Br&uuml;cken, Kronen, Inlays, Kieferorthop&auml;die nach Unfall</p></div>
+                </div>
+                <div class="budget-item">
+                    <span class="bi-icon">&#128065;</span>
+                    <div><h4>Sehhilfen</h4><p>Brillen, Kontaktlinsen bis max. 300 &euro;, LASIK/LASEK, Linsenaustausch</p></div>
+                </div>
+                <div class="budget-item">
+                    <span class="bi-icon">&#129657;</span>
+                    <div><h4>Zahnbehandlung</h4><p>F&uuml;llungen, Wurzel-, Parodontose- und schmerzstillende Behandlungen</p></div>
+                </div>
+                <div class="budget-item">
+                    <span class="bi-icon">&#128138;</span>
+                    <div><h4>Arznei, Heil- &amp; Hilfsmittel</h4><p>Gesetzliche Zuzahlungen inkl. Restkosten f&uuml;r Hilfsmittel</p></div>
+                </div>
+                <div class="budget-item">
+                    <span class="bi-icon">&#129658;</span>
+                    <div><h4>Zahnvorsorge</h4><p>Prof. Zahnreinigung max. 300 &euro;, Bleaching max. 100 &euro;</p></div>
+                </div>
+                <div class="budget-item">
+                    <span class="bi-icon">&#127973;</span>
+                    <div><h4>Naturheilkunde</h4><p>Heilpraktiker, Chiropraktik, Osteopathie inkl. Arznei, Kinesio-Tape bis 100 &euro;</p></div>
+                </div>
+                <div class="budget-item">
+                    <span class="bi-icon">&#128200;</span>
+                    <div><h4>Vorsorge (inkl. IGeL)</h4><p>Reisemedizinische Schutzimpfungen, Pr&auml;ventionskurse, altersunabh&auml;ngige Vorsorge</p></div>
+                </div>
+                <div class="budget-item">
+                    <span class="bi-icon">&#128222;</span>
+                    <div><h4>Assistance-Leistungen</h4><p>Gesundheitstelefon, Facharzt-Terminservice, digitale Gesundheitsservices</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vorteile AN / AG -->
+<section class="section vorteile-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Der doppelte Mehrwert</span>
+        <h2>Vorteile f&uuml;r Mitarbeitende &amp; f&uuml;r das Unternehmen</h2>
+        <p class="lead">Der Budget-Tarif wirkt auf beiden Seiten: sp&uuml;rbarer Gesundheitsschutz f&uuml;r die Belegschaft, ein starker, steuerlich beg&uuml;nstigter Hebel auf Bindung und Arbeitgebermarke f&uuml;r das Unternehmen.</p>
+
+        <div class="vorteile-grid">
+            <!-- Arbeitnehmer -->
+            <div class="vorteile-col">
+                <div class="vorteile-col-head an">
+                    <span class="vc-icon">&#128106;</span>
+                    <div>
+                        <h3>F&uuml;r Arbeitnehmende</h3>
+                        <p>Gesundheit, die ankommt &mdash; netto wie brutto</p>
+                    </div>
+                </div>
+                <ul class="vorteile-list">
+                    <li><span class="vl-check">&#10003;</span><div><h4>Privat&auml;rztliche Leistungen trotz GKV</h4><p>Zugang zu Leistungen, die die gesetzliche Versorgung nur eingeschr&auml;nkt bietet &mdash; Brille, Zahn, Vorsorge.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Voller Wert, keine Abz&uuml;ge</h4><p>Bis 50 &euro;/Monat steuer- und sozialabgabenfrei: Die Leistung kommt ungeschm&auml;lert an.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Frei verwendbar</h4><p>Jeder setzt die 300 &euro; dort ein, wo der eigene Bedarf liegt &mdash; keine Sublimits, kein Zwang.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Ohne Gesundheitspr&uuml;fung &amp; Wartezeit</h4><p>Im Gruppenvertrag versichert &mdash; auch fehlende Z&auml;hne und angeratene Behandlungen sind mitversichert.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Familie absicherbar</h4><p>Angeh&ouml;rige k&ouml;nnen optional mitversichert werden &mdash; bei Signal Iduna f&uuml;r 300/600 &euro; sogar ohne Gesundheitspr&uuml;fung.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Echte Wertsch&auml;tzung</h4><p>Ein sp&uuml;rbarer, pers&ouml;nlicher Benefit statt einer anonymen Gehaltskomponente.</p></div></li>
+                </ul>
+            </div>
+
+            <!-- Arbeitgeber -->
+            <div class="vorteile-col">
+                <div class="vorteile-col-head ag">
+                    <span class="vc-icon">&#127970;</span>
+                    <div>
+                        <h3>F&uuml;r die Ventana Deutschland</h3>
+                        <p>Hohe Wirkung bei geringen Kosten</p>
+                    </div>
+                </div>
+                <ul class="vorteile-list">
+                    <li><span class="vl-check">&#10003;</span><div><h4>Attraktiver im Wettbewerb</h4><p>Sichtbarer Pluspunkt im Recruiting und f&uuml;r die Arbeitgebermarke (Employer Branding).</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>St&auml;rkere Mitarbeiterbindung</h4><p>Wertsch&auml;tzung senkt Fluktuation und sichert Know-how im Unternehmen.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Lohnnebenkosten-effizient</h4><p>Deutlich g&uuml;nstiger als eine klassische Gehaltserh&ouml;hung gleicher Nettowirkung &mdash; keine AG-Sozialabgaben auf den Sachbezug.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Steuerlich abzugsf&auml;hig</h4><p>Beitr&auml;ge sind als Betriebsausgabe abzugsf&auml;hig und mindern den steuerlichen Gewinn.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Gesündere Belegschaft</h4><p>Bessere Versorgung und Pr&auml;vention k&ouml;nnen krankheitsbedingte Ausf&auml;lle reduzieren.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Geringer Aufwand</h4><p>Einfache Verwaltung &uuml;ber einen Gruppenvertrag &mdash; bereits ab 3 Mitarbeitenden (Signal Iduna).</p></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Head-to-Head: Budget 300 DKV vs Signal Iduna -->
+<section class="section h2h-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Wettbewerbsvergleich</span>
+        <h2>Budget 300 &euro; im direkten Vergleich: Signal Iduna vs. DKV</h2>
+        <p class="lead">Beide Budget-Tarife der Hauspartner im direkten Gegen&uuml;berstellung &mdash; identische Budgeth&ouml;he, unterschiedliche Konditionen.</p>
+
+        <div class="h2h-card">
+            <table class="h2h-table">
+                <thead>
+                    <tr>
+                        <th>Merkmal</th>
+                        <th class="col-signal">Signal Iduna<small>GesundAKTIV+</small></th>
+                        <th class="col-dkv">DKV<small>BonusMed Budget</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>J&auml;hrliches Budget</td>
+                        <td>300 &euro;</td>
+                        <td>300 &euro;</td>
+                    </tr>
+                    <tr>
+                        <td>Mindestzahl Mitarbeiter</td>
+                        <td class="win-cell">ab 3 MA</td>
+                        <td>ab 10 MA</td>
+                    </tr>
+                    <tr>
+                        <td>Ohne Gesundheitspr&uuml;fung</td>
+                        <td class="val-yes">Ja</td>
+                        <td class="val-yes">Ja</td>
+                    </tr>
+                    <tr>
+                        <td>Auch f&uuml;r PKV-Versicherte</td>
+                        <td class="val-yes">Ja</td>
+                        <td class="val-yes">Ja</td>
+                    </tr>
+                    <tr>
+                        <td>Volles Budget sofort (unterj&auml;hrig)</td>
+                        <td class="val-yes">Ja</td>
+                        <td class="val-yes">Ja</td>
+                    </tr>
+                    <tr>
+                        <td>Angeh&ouml;rige ohne Gesundheitspr&uuml;fung</td>
+                        <td class="win-cell">Ja (Budget 300/600)</td>
+                        <td>&Ouml;ffnungsklausel 3 Mon.</td>
+                    </tr>
+                    <tr>
+                        <td>Prof. Zahnreinigung</td>
+                        <td class="win-cell">max. 300 &euro; j&auml;hrlich</td>
+                        <td class="val-yes">Ja</td>
+                    </tr>
+                    <tr>
+                        <td>Bleaching</td>
+                        <td class="win-cell">max. 100 &euro; j&auml;hrlich</td>
+                        <td class="val-no">Nein</td>
+                    </tr>
+                    <tr>
+                        <td>Schmerzstillende Zahnbehandlung</td>
+                        <td class="val-yes">Ja</td>
+                        <td class="val-no">Nein</td>
+                    </tr>
+                    <tr>
+                        <td>Kieferorthop&auml;die nach Unfall</td>
+                        <td class="win-cell">Ja</td>
+                        <td class="val-no">Nein</td>
+                    </tr>
+                    <tr>
+                        <td>Sehhilfen</td>
+                        <td class="win-cell">max. 300 &euro; j&auml;hrlich</td>
+                        <td class="val-yes">Ja</td>
+                    </tr>
+                    <tr>
+                        <td>Kinesio-Taping</td>
+                        <td class="win-cell">max. 100 &euro; j&auml;hrlich</td>
+                        <td class="val-no">Nein</td>
+                    </tr>
+                    <tr>
+                        <td>Assistance-Leistungen</td>
+                        <td class="val-yes">Ja</td>
+                        <td class="val-yes">Ja</td>
+                    </tr>
+                    <tr>
+                        <td>Beitragsbefreiung (AU &gt; 6 Wo.)</td>
+                        <td class="val-yes">Ja</td>
+                        <td class="val-yes">Ja</td>
+                    </tr>
+                    <tr class="h2h-price-row">
+                        <td>Monatlicher Beitrag</td>
+                        <td><span class="price-pill">13,00 &euro;</span></td>
+                        <td><span class="price-pill muted">15,68 &euro;</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="h2h-fazit">
+                <span class="fz-icon">&#127942;</span>
+                <div><strong>Fazit:</strong> Beim Budget 300 &euro; ist Signal Iduna mit <strong>13,00 &euro;</strong> nicht nur g&uuml;nstiger als die DKV (15,68 &euro;), sondern bietet zugleich den niedrigeren Mindest-Mitarbeiterzugang (ab 3 MA), mehr Zusatzleistungen (Bleaching, Kinesio-Taping, schmerzstillende Behandlungen) und die Mitversicherung von Angeh&ouml;rigen ohne Gesundheitspr&uuml;fung. F&uuml;r das reine Budget ist Signal Iduna damit die wirtschaftlich und leistungsseitig st&auml;rkere Wahl.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Empfehlung -->
+<section class="section empfehlung-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Unsere Empfehlung</span>
+        <h2>F&uuml;r den Budget-Tarif: Signal Iduna GesundAKTIV+</h2>
+        <p class="lead">Auf Basis von Beitrag, Assistance-Leistungen und Zugangskonditionen empfehlen wir f&uuml;r das 300-&euro;-Budget der Ventana Deutschland den Tarif <strong>GesundAKTIV+ der Signal Iduna</strong>.</p>
+
+        <div class="empfehlung-card">
+            <div class="empfehlung-head">
+                <span class="eh-badge">Empfohlen</span>
+                <div>
+                    <h3>Signal Iduna GesundAKTIV+ &mdash; 13,00 &euro;/Monat</h3>
+                    <p>G&uuml;nstiger im Beitrag, st&auml;rker im Service, breiter im Zugang.</p>
+                </div>
+            </div>
+            <div class="empfehlung-body">
+                <div class="empf-reason">
+                    <div class="er-icon">&#128181;</div>
+                    <div class="er-num">&minus; 32 &euro;</div>
+                    <h4>G&uuml;nstigerer Beitrag</h4>
+                    <p>13,00 &euro; statt 15,68 &euro; (DKV) &mdash; das sind <strong>2,68 &euro; weniger pro Monat</strong> bzw. rund <strong>32 &euro; Ersparnis pro Mitarbeiter und Jahr</strong> bei identischer Budgeth&ouml;he.</p>
+                </div>
+                <div class="empf-reason">
+                    <div class="er-icon">&#128222;</div>
+                    <h4>Starke Assistance-Leistungen inklusive</h4>
+                    <p>Gesundheitstelefon, Facharzt-Terminservice und digitale Gesundheitsservices sind <strong>ohne Aufpreis enthalten</strong> &mdash; ein t&auml;glich nutzbarer Mehrwert, der die bKV f&uuml;r alle sp&uuml;rbar macht, nicht nur im Leistungsfall.</p>
+                </div>
+                <div class="empf-reason">
+                    <div class="er-icon">&#10133;</div>
+                    <h4>Breiterer Zugang &amp; mehr Leistung</h4>
+                    <p>Bereits <strong>ab 3 Mitarbeitenden</strong>, Angeh&ouml;rige ohne Gesundheitspr&uuml;fung (300/600 &euro;) und Zusatzleistungen wie Bleaching, Kinesio-Taping und schmerzstillende Behandlungen.</p>
+                </div>
+            </div>
+            <div class="empfehlung-foot">
+                <span>&#9989;</span>
+                <span><strong>Unterm Strich:</strong> niedrigerer Beitrag <em>und</em> mehr Leistung &mdash; Signal Iduna ist beim 300-&euro;-Budget sowohl wirtschaftlich als auch im erlebbaren Service die st&auml;rkere Wahl.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Marktvergleich (Hintergrund) -->
+<section class="section markt-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Markt&uuml;bersicht &middot; zur Einordnung</span>
+        <h2>Der komplette Budget-Tarif-Vergleich &mdash; 5 Anbieter</h2>
+        <p class="lead">Zur vollst&auml;ndigen Einordnung: die f&uuml;hrenden Budget-Tarife am bKV-Markt im Detail. Der gew&auml;hlte Einstieg mit 300 &euro; ist hervorgehoben.</p>
+        <div class="collapse-note">&#128202; Stand: 09.02.2026 &middot; Quelle: Anbieter-Produktinformationen</div>
+
+        <div class="markt-table-wrap">
+            <table class="markt-table">
+                <thead>
+                    <tr>
+                        <th>Merkmal</th>
+                        <th>Signal Iduna<br><small>GesundAKTIV+</small></th>
+                        <th>Allianz<br><small>MeineGesundheit</small></th>
+                        <th>DKV<br><small>BonusMed Budget</small></th>
+                        <th>Hallesche<br><small>FEELfree-up 1</small></th>
+                        <th>Barmenia<br><small>WellYou</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cat-row"><td colspan="6">Allgemein</td></tr>
+                    <tr><td>Tarifeinf&uuml;hrung</td><td>18.10.2022</td><td>01.04.2025</td><td>01.10.2023</td><td>01.05.2022</td><td>01.03.2021</td></tr>
+                    <tr><td>Budgetstufen</td><td class="mv-special">300/600/900/<br>1200/1500</td><td class="mv-special">300*/600/900/<br>1200/1500</td><td class="mv-special">300/600/900/<br>1200</td><td class="mv-special">300/600/900/<br>1200/1500</td><td class="mv-special">300/600/900</td></tr>
+                    <tr><td>Mindestzahl Mitarbeiter</td><td class="mv-highlight"><strong>ab 3 MA</strong></td><td>ab 5 MA</td><td>ab 10 MA</td><td>10 MA</td><td>5 MA, mind. 90%</td></tr>
+                    <tr><td>Auch f&uuml;r PKV-Versicherte</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Ohne Gesundheitspr&uuml;fung</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Volles Budget unterj&auml;hrig</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Mitvers. fehlender Z&auml;hne</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Angeratene/laufende Behandlungen</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Assistance-Leistungen</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Beitragsbefreiung (AU &gt; 6 Wo.)</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Weiterversicherung</td><td class="mv-yes">Ja</td><td class="mv-special">Ja, in Einzeltarifen</td><td class="mv-yes">Ja</td><td class="mv-special">Ja, in Einzeltarifen</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Mitvers. Familienangeh&ouml;rige</td><td class="mv-yes">Ja</td><td class="mv-special">Ja, in Einzeltarifen</td><td class="mv-special">Ja, Tariflinie Kompakt</td><td class="mv-special">Ja, in Einzeltarifen</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Ohne GP (Angeh&ouml;rige)</td><td class="mv-highlight"><strong>Ja (300/600)</strong></td><td class="mv-special">&Ouml;ffnungsklausel 12 Mon.</td><td class="mv-special">&Ouml;ffnungsklausel 3 Mon.</td><td class="mv-special">&Ouml;ffnungsklausel</td><td class="mv-special">Ja (gleicher Tarif)</td></tr>
+
+                    <tr class="cat-row"><td colspan="6">Zahn</td></tr>
+                    <tr><td>Zahnersatz (Implantate, Br&uuml;cken, Kronen)</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Kieferorthop&auml;die nach Unfall</td><td class="mv-highlight"><strong>Ja</strong></td><td class="mv-special">inkl. schwere Erkrank.</td><td class="mv-no">Nein</td><td class="mv-no">Nein</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Zahnbehandlung</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Prof. Zahnreinigung</td><td class="mv-highlight"><strong>max. 300 &euro;</strong></td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-special">bis 100 &euro;/KJ</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Bleaching</td><td class="mv-highlight"><strong>max. 100 &euro;</strong></td><td class="mv-yes">Ja</td><td class="mv-no">Nein</td><td class="mv-special">bis 100 &euro;/KJ</td><td class="mv-no">Nein</td></tr>
+                    <tr><td>Schmerzstillende Behandlungen</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-no">Nein</td><td class="mv-no">Nein</td><td class="mv-yes">Ja</td></tr>
+
+                    <tr class="cat-row"><td colspan="6">Ambulant &amp; Station&auml;r</td></tr>
+                    <tr><td>Sehhilfen</td><td class="mv-highlight"><strong>max. 300 &euro;</strong></td><td>75%</td><td class="mv-yes">Ja</td><td class="mv-special">max. 180 &euro;</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Refraktive Chirurgie (LASIK)</td><td class="mv-highlight"><strong>Ja, 100%</strong></td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Vorsorgeuntersuchungen</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-no">Nein</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Schutzimpfungen</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-no">Nein</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Pr&auml;ventionskurse</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-no">Nein</td><td class="mv-no">Nein</td></tr>
+                    <tr><td>Arznei &amp; Verbandmittel</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Heil- &amp; Hilfsmittel</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Kinesio-Taping</td><td class="mv-highlight"><strong>max. 100 &euro;</strong></td><td class="mv-no">Nein</td><td class="mv-no">Nein</td><td class="mv-special">100 &euro; (verordnet)</td><td class="mv-no">Nein</td></tr>
+                    <tr><td>&Uuml;bernahme gesetzl. Zuzahlungen</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Heilpraktiker / Naturheilkunde</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-yes">Ja</td><td class="mv-special">Nur Heilpraktiker</td><td class="mv-yes">Ja</td></tr>
+                    <tr><td>Nicht&auml;rztl. Osteopathen/Chiropraktiker</td><td class="mv-no">Nein</td><td class="mv-no">Nein</td><td class="mv-no">Nein</td><td class="mv-yes">Ja</td><td class="mv-no">Nein</td></tr>
+
+                    <tr class="cat-row"><td colspan="6">Monatliche Beitr&auml;ge</td></tr>
+                    <tr class="price-row highlight-300"><td>Budget 300 &euro;</td><td class="mv-highlight"><strong>13,00 &euro;</strong></td><td>13,90 &euro;</td><td>15,68 &euro;</td><td>14,50 &euro; <small>(500 &euro;)</small></td><td>13,00 &euro;</td></tr>
+                    <tr class="price-row"><td>Budget 600 &euro;</td><td class="mv-highlight"><strong>22,00 &euro;</strong></td><td>22,90 &euro;</td><td>25,97 &euro;</td><td>25,67 &euro; <small>(800 &euro;)</small></td><td>21,10 &euro;</td></tr>
+                    <tr class="price-row"><td>Budget 900 &euro;</td><td><strong>30,00 &euro;</strong></td><td>32,90 &euro;</td><td>33,84 &euro;</td><td>35,30 &euro; <small>(1.100 &euro;)</small></td><td>29,50 &euro;</td></tr>
+                    <tr class="price-row"><td>Budget 1.200 &euro;</td><td><strong>37,00 &euro;</strong></td><td>41,90 &euro;</td><td>40,21 &euro;</td><td>44,22 &euro; <small>(1.400 &euro;)</small></td><td>&mdash;</td></tr>
+                    <tr class="price-row"><td>Budget 1.500 &euro;</td><td><strong>43,00 &euro;</strong></td><td>49,90 &euro;</td><td>&mdash;</td><td>49,92 &euro; <small>(1.700 &euro;)</small></td><td>&mdash;</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Corporate Well-Being -->
+<section class="section strategie-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Die gr&ouml;&szlig;ere Strategie</span>
+        <h2>Mehr als ein Tarif &mdash; das Fundament f&uuml;r Corporate Well-Being</h2>
+        <p class="lead">Der 300-&euro;-Budget-Tarif ist nicht nur eine Versicherungsleistung, sondern der <strong>breite Sockel einer betrieblichen Gesundheitsstrategie</strong>. Anders als Spitzenbausteine, die einzelne Gruppen absichern, wirkt das Budget in der gesamten Belegschaft &mdash; auf alle vier Dimensionen des Wohlbefindens, jeden Tag.</p>
+
+        <span class="cwb-intro-tag">&#129517; Breite vor Spitze &mdash; Gesundheit, die alle erreicht</span>
+
+        <div class="cwb-structure">
+            <div class="cwb-pillars">
+                <div class="cwb-pillar">
+                    <div class="cp-icon">&#128147;</div>
+                    <h4>K&ouml;rperlich</h4>
+                    <p>Vorsorge, Sehhilfen, Zahn, Naturheilkunde &mdash; reale Gesundheitsleistungen statt Symbolik.</p>
+                    <span class="cp-budget">Budget zahlt direkt ein</span>
+                </div>
+                <div class="cwb-pillar">
+                    <div class="cp-icon">&#129504;</div>
+                    <h4>Mental</h4>
+                    <p>Assistance &amp; Gesundheitstelefon entlasten im Alltag &mdash; schneller Rat ohne Wartezeit.</p>
+                    <span class="cp-budget">Assistance inklusive</span>
+                </div>
+                <div class="cwb-pillar">
+                    <div class="cp-icon">&#128176;</div>
+                    <h4>Finanziell</h4>
+                    <p>Erstattung ohne Eigeninvestition &mdash; steuerfrei bis 50 &euro;/Monat, voller Wert kommt an.</p>
+                    <span class="cp-budget">Netto = Brutto</span>
+                </div>
+                <div class="cwb-pillar">
+                    <div class="cp-icon">&#129309;</div>
+                    <h4>Sozial</h4>
+                    <p>Ein sichtbarer Benefit f&uuml;r jeden schafft Wertsch&auml;tzung und st&auml;rkt die Bindung.</p>
+                    <span class="cp-budget">F&uuml;r alle, ohne Ausnahme</span>
+                </div>
+            </div>
+            <div class="cwb-base">
+                <div class="cb-main">
+                    <span class="cb-icon">&#127959;&#65039;</span>
+                    <div>
+                        <h4>300 &euro; Gesundheitsbudget &mdash; das tragende Fundament</h4>
+                        <p>Ein gemeinsamer Sockel, auf dem erweiterter Schutz und Spitzenabsicherung (z.&nbsp;B. BestCare) aufbauen.</p>
+                    </div>
+                </div>
+                <div class="cb-reach">
+                    <div class="num">100 %</div>
+                    <div class="lbl">der Belegschaft &middot; t&auml;glich</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cwb-followup">
+            <span class="cf-icon">&#128640;</span>
+            <div>
+                <h4>Vom Tarif zur Strategie</h4>
+                <p>Das Budget bildet die Basis &mdash; darauf lassen sich erweiterte Treuestufen und eine Spitzenabsicherung f&uuml;r F&uuml;hrungskr&auml;fte und langj&auml;hrige Mitarbeitende (BestCare) gestaffelt aufsetzen. So wird aus einer Einzelleistung ein durchdachtes Corporate-Well-Being-Konzept.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <h2>Das 300-&euro;-Budget &mdash; <em>der ideale Einstieg in die bKV</em></h2>
+    <p>Hohe Wirkung auf Bindung und Arbeitgebermarke bei &uuml;berschaubarem Aufwand &mdash; steuerlich begünstigt, ohne Gesundheitspr&uuml;fung und f&uuml;r jeden Mitarbeitenden sp&uuml;rbar. Das Fundament, auf dem die Treuestufen aufbauen.</p>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <p style="font-size: 0.75rem; opacity: 0.5;">
+            Diese &Uuml;bersicht dient der allgemeinen Information und stellt keine Versicherungsberatung dar. Ma&szlig;geblich sind die jeweiligen Versicherungsbedingungen. Beitr&auml;ge: Stand 09.02.2026. Steuerliche Angaben ohne Gew&auml;hr. Stand: Juni 2026.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

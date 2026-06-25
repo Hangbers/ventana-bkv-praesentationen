@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bKV-Pr&auml;sentationen | Ventana Deutschland</title>
+    <style>
+        :root {
+            --primary: #1d1d1b;
+            --orange: #f59c00;
+            --orange-dark: #c2710a;
+            --dkv: #00857c;
+            --dkv-dark: #006d66;
+            --text-light: #5a5a58;
+            --border: #e5e7eb;
+            --bg-light: #f5f9fa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--primary);
+            background: linear-gradient(160deg, #1d1d1b 0%, #2a2a28 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .wrap { max-width: 920px; width: 100%; text-align: center; }
+        .logo { margin-bottom: 28px; }
+        .logo svg { height: 46px; }
+        h1 { color: #fff; font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 800; margin-bottom: 8px; }
+        .sub { color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 42px; }
+        .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 34px 30px;
+            text-align: left;
+            text-decoration: none;
+            color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-top: 5px solid var(--orange);
+        }
+        .card.bestcare { border-top-color: var(--dkv); }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 18px 50px rgba(0,0,0,0.32); }
+        .card .badge {
+            align-self: flex-start;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            color: #fff;
+            background: var(--orange);
+        }
+        .card.bestcare .badge { background: var(--dkv); }
+        .card .icon { font-size: 2.2rem; margin-bottom: 12px; }
+        .card h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+        .card p { font-size: 0.92rem; color: var(--text-light); line-height: 1.6; flex-grow: 1; }
+        .card .go {
+            margin-top: 20px;
+            font-weight: 700;
+            color: var(--orange-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card.bestcare .go { color: var(--dkv-dark); }
+        .foot { color: rgba(255,255,255,0.45); font-size: 0.78rem; margin-top: 40px; }
+        @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220.342 54.765">
+                <g transform="translate(0 0)">
+                    <path d="M91.1,95.524a24.676,24.676,0,0,1-11.762,5.785h9.391l4.709-8.156.02-.033c-.033.04-.066.08-.1.126A13.089,13.089,0,0,1,91.1,95.524Z" transform="translate(-44.06 -50.436)" fill="#3a8fd6"/>
+                    <path d="M83.28,49.562h0a9.411,9.411,0,0,1,8.867,6.283A11.37,11.37,0,0,0,76.99,40.7,9.386,9.386,0,0,1,83.28,49.562Z" transform="translate(-43.271 -32.46)" fill="#f59c00"/>
+                    <path d="M53.106,79.743a9.393,9.393,0,0,1-8.86-6.283A11.357,11.357,0,0,0,59.389,88.6,9.393,9.393,0,0,1,53.106,79.743Z" transform="translate(-31.906 -43.833)" fill="#f59c00"/>
+                    <path d="M83.286,79.743A9.4,9.4,0,0,1,77.01,88.6,11.369,11.369,0,0,0,92.153,73.46,9.408,9.408,0,0,1,83.286,79.743Z" transform="translate(-43.277 -43.833)" fill="#f59c00"/>
+                    <path d="M53.106,49.562h0A9.392,9.392,0,0,1,59.4,40.7,11.376,11.376,0,0,0,44.246,55.845,9.393,9.393,0,0,1,53.106,49.562Z" transform="translate(-31.906 -32.46)" fill="#f59c00"/>
+                    <path d="M80.341,57.878a13.534,13.534,0,0,0,1.574-13.183l-1.733-3c-.033-.04-.06-.08-.093-.12a13.65,13.65,0,0,0-2.265-2.285A13.526,13.526,0,0,0,61.385,39a13.526,13.526,0,0,0-16.438.286,13.65,13.65,0,0,0-2.265,2.285,1.459,1.459,0,0,0-.093.12l-1.733,3A13.534,13.534,0,0,0,42.43,57.878a13.534,13.534,0,0,0-1.574,13.183l1.727,3c.033.046.066.086.1.133a13.513,13.513,0,0,0,18.7,2.557,13.514,13.514,0,0,0,18.7-2.557c.033-.04.066-.08.1-.126l1.733-3a13.528,13.528,0,0,0,1.036-5.2A13.375,13.375,0,0,0,80.341,57.878Z" transform="translate(-30.788 -31.372)" fill="#c51a1b"/>
+                    <path d="M142.511,49.95l7.7,23.112,7.552-23.112h2.271l-8.86,25.921H149.02L140.2,49.95Z" transform="translate(-64.499 -35.937)" fill="#fff"/>
+                    <path d="M188.652,61.387v1.926h-10.48v10.4h11.4v1.926h-13.6V49.95h13.443v1.926H178.172v9.51Z" transform="translate(-76.515 -35.937)" fill="#fff"/>
+                    <path d="M206.821,49.95l12.945,22.494V49.95H221.8v25.7h-2.544L206.469,53.224V75.646H204.39V49.95Z" transform="translate(-86.056 -35.937)" fill="#fff"/>
+                    <path d="M252.538,49.95v1.926H245.91v23.77h-2.192V51.876H237.05V49.95Z" transform="translate(-97.025 -35.937)" fill="#fff"/>
+                    <path d="M270.673,49.66l8.9,25.882h-2.311l-2.5-7.279H264.9l-2.544,7.279H260.08l8.9-25.882Zm-.85,3.121-4.317,13.562h8.588Z" transform="translate(-104.76 -35.839)" fill="#fff"/>
+                    <path d="M298.351,49.95,311.3,72.444V49.95h2.039v25.7h-2.544L298,53.224V75.646H295.92V49.95Z" transform="translate(-116.795 -35.937)" fill="#fff"/>
+                    <path d="M339.223,49.66l8.9,25.882h-2.311l-2.5-7.279h-9.863L330.9,75.542H328.63l8.9-25.882Zm-.843,3.121-4.317,13.562h8.588Z" transform="translate(-127.781 -35.839)" fill="#fff"/>
+                </g>
+            </svg>
+        </div>
+        <h1>Betriebliche Krankenversicherung</h1>
+        <p class="sub">Pr&auml;sentationen f&uuml;r die Ventana Deutschland</p>
+
+        <div class="cards">
+            <a class="card budget" href="budget-tarif-300.html">
+                <span class="badge">Budget-Tarif</span>
+                <div class="icon">&#127959;&#65039;</div>
+                <h2>300 &euro; Gesundheitsbudget</h2>
+                <p>Das Fundament f&uuml;r alle Mitarbeitenden &mdash; inkl. Wettbewerbsvergleich Signal Iduna vs. DKV, komplettem 5-Anbieter-Markt&uuml;berblick, Empfehlung und Corporate-Well-Being-Einordnung.</p>
+                <span class="go">Pr&auml;sentation &ouml;ffnen &rarr;</span>
+            </a>
+            <a class="card bestcare" href="best-care.html">
+                <span class="badge">Premium-Baustein</span>
+                <div class="icon">&#129351;</div>
+                <h2>DKV BestCare</h2>
+                <p>Spitzenabsicherung f&uuml;r F&uuml;hrungskr&auml;fte und langj&auml;hrige Mitarbeitende &mdash; Ablauf, Leistungen, versicherte Erkrankungen und Einbettung in eine Corporate-Well-Being-Strategie.</p>
+                <span class="go">Pr&auml;sentation &ouml;ffnen &rarr;</span>
+            </a>
+        </div>
+
+        <p class="foot">Unverbindliche Informationsunterlagen &middot; Stand: Juni 2026</p>
+    </div>
+</body>
+</html>

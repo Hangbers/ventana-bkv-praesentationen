@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DKV BestCare | Ventana Deutschland</title>
+    <style>
+        :root {
+            --primary: #1d1d1b;
+            --primary-light: #333331;
+            --accent: #01bcde;
+            --accent-dark: #019ab8;
+            --accent-glow: rgba(1,188,222,0.12);
+            --dkv: #00857c;
+            --dkv-dark: #006d66;
+            --dkv-light: #e6f5f4;
+            --dkv-glow: rgba(0,133,124,0.12);
+            --signal: #003d7a;
+            --bg-light: #f5f9fa;
+            --bg-warm: #eef9fb;
+            --bg-teal: #f0faf9;
+            --text: #1d1d1b;
+            --text-light: #5a5a58;
+            --text-muted: #8a8a88;
+            --white: #ffffff;
+            --green: #16a34a;
+            --red: #dc2626;
+            --red-light: #fdecec;
+            --border: #e5e7eb;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: var(--white);
+        }
+
+        /* ── Header ── */
+        .header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-bottom: 3px solid var(--dkv);
+        }
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img { height: 38px; }
+        .header-badge {
+            background: var(--dkv-light);
+            color: var(--dkv-dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid rgba(0,133,124,0.3);
+        }
+
+        /* ── Sections ── */
+        .section { padding: 70px 30px; }
+        .section-inner { max-width: 1300px; margin: 0 auto; }
+        .section-eyebrow {
+            display: inline-block;
+            color: var(--dkv);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .section h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        .section .lead {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin-bottom: 35px;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, #013b37 0%, var(--dkv-dark) 55%, var(--dkv) 100%);
+            color: var(--white);
+            padding: 65px 30px 75px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-inner { max-width: 1300px; margin: 0 auto; position: relative; z-index: 2; }
+        .hero-eyebrow {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            color: var(--white);
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 15px;
+            max-width: 800px;
+        }
+        .hero h1 em { color: #aef5ef; font-style: normal; }
+        .hero-subtitle {
+            font-size: 1.12rem;
+            opacity: 0.9;
+            max-width: 680px;
+            line-height: 1.8;
+        }
+
+        /* ── KPI-Strip ── */
+        .kpi-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 40px;
+        }
+        .kpi-card {
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: var(--radius-lg);
+            padding: 26px 28px;
+            backdrop-filter: blur(4px);
+        }
+        .kpi-card .kpi-num { font-size: 2.6rem; font-weight: 800; color: #aef5ef; line-height: 1; }
+        .kpi-card .kpi-unit { font-size: 1rem; font-weight: 700; opacity: 0.9; margin-top: 4px; }
+        .kpi-card .kpi-desc { font-size: 0.85rem; opacity: 0.78; margin-top: 8px; }
+
+        /* ── Intro / Was ist BestCare ── */
+        .intro-section { background: var(--white); }
+        .intro-box {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: 30px;
+        }
+        .intro-left {
+            background: linear-gradient(135deg, var(--dkv) 0%, #00a89d 100%);
+            color: white;
+            padding: 42px 38px;
+        }
+        .intro-left .ib-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .intro-left h3 { font-size: 1.5rem; margin-bottom: 12px; line-height: 1.3; }
+        .intro-left p { opacity: 0.92; font-size: 0.98rem; }
+        .intro-right { background: var(--white); padding: 38px; display: flex; flex-direction: column; justify-content: center; }
+        .intro-feat { display: flex; gap: 14px; margin-bottom: 20px; }
+        .intro-feat:last-child { margin-bottom: 0; }
+        .intro-feat .if-icon {
+            width: 42px; height: 42px;
+            background: var(--dkv-light);
+            color: var(--dkv);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+        .intro-feat h4 { font-size: 0.98rem; color: var(--primary); margin-bottom: 2px; }
+        .intro-feat p { font-size: 0.85rem; color: var(--text-light); }
+
+        /* ── Ablauf ── */
+        .ablauf-section { background: var(--bg-teal); }
+        .ablauf-timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-top: 35px;
+            position: relative;
+        }
+        .ablauf-step {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 26px 20px 22px;
+            box-shadow: var(--shadow);
+            position: relative;
+            border-top: 4px solid var(--dkv);
+            text-align: center;
+        }
+        .ablauf-step .as-num {
+            width: 44px; height: 44px;
+            background: var(--dkv);
+            color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800;
+            font-size: 1.15rem;
+            margin: 0 auto 14px;
+        }
+        .ablauf-step h4 { font-size: 0.98rem; color: var(--primary); margin-bottom: 6px; }
+        .ablauf-step p { font-size: 0.82rem; color: var(--text-light); }
+        .ablauf-step.accent .as-num { background: #b8860b; }
+        .ablauf-step.accent { border-top-color: #b8860b; }
+        .ablauf-note {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 18px 25px;
+            margin-top: 25px;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--dkv);
+        }
+        .ablauf-note .an-icon { font-size: 1.6rem; flex-shrink: 0; }
+        .ablauf-note p { font-size: 0.92rem; color: var(--text); }
+
+        /* ── Leistungen ── */
+        .leist-section { background: var(--white); }
+        .leist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+        .leist-card {
+            background: var(--bg-light);
+            border-radius: var(--radius-lg);
+            padding: 28px 26px;
+            border-top: 3px solid var(--dkv);
+            transition: transform 0.3s ease;
+        }
+        .leist-card:hover { transform: translateY(-4px); }
+        .leist-card .lc-icon {
+            width: 48px; height: 48px;
+            background: var(--dkv);
+            color: white;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+        .leist-card h4 { font-size: 1.05rem; color: var(--primary); margin-bottom: 6px; }
+        .leist-card p { font-size: 0.88rem; color: var(--text-light); }
+
+        /* ── Erkrankungen ── */
+        .erk-section { background: var(--bg-light); }
+        .erk-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 30px;
+        }
+        .erk-col {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .erk-col-head {
+            padding: 22px 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .erk-col-head.adult { background: linear-gradient(135deg, var(--dkv) 0%, var(--dkv-dark) 100%); }
+        .erk-col-head.child { background: linear-gradient(135deg, var(--signal) 0%, #005baa 100%); }
+        .erk-col-head .ec-icon { font-size: 1.8rem; }
+        .erk-col-head h3 { font-size: 1.15rem; }
+        .erk-col-head p { font-size: 0.8rem; opacity: 0.85; }
+        .erk-list { list-style: none; padding: 14px 30px 26px; }
+        .erk-list li {
+            padding: 11px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+            font-size: 0.9rem;
+        }
+        .erk-list li:last-child { border-bottom: none; }
+        .erk-list .el-check { color: var(--dkv); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+        .erk-col-head.child ~ .erk-list .el-check { color: var(--signal); }
+        .erk-precond {
+            background: var(--dkv-glow);
+            border-radius: var(--radius);
+            padding: 16px 22px;
+            margin-top: 26px;
+            font-size: 0.9rem;
+            color: var(--dkv-dark);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .erk-precond .ep-icon { font-size: 1.3rem; flex-shrink: 0; }
+
+        /* ── Voraussetzungen & Grenzen ── */
+        .grenzen-section { background: var(--white); }
+        .grenzen-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 30px;
+        }
+        .grenzen-card {
+            border-radius: var(--radius-lg);
+            padding: 32px 30px;
+            box-shadow: var(--shadow);
+        }
+        .grenzen-card.ok { background: var(--dkv-light); border: 1px solid rgba(0,133,124,0.2); }
+        .grenzen-card.no { background: var(--red-light); border: 1px solid rgba(220,38,38,0.18); }
+        .grenzen-card h3 { font-size: 1.15rem; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+        .grenzen-card.ok h3 { color: var(--dkv-dark); }
+        .grenzen-card.no h3 { color: var(--red); }
+        .grenzen-card ul { list-style: none; }
+        .grenzen-card li {
+            padding: 11px 0;
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+            font-size: 0.92rem;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .grenzen-card li:last-child { border-bottom: none; }
+        .grenzen-card .gc-mark { flex-shrink: 0; font-weight: 800; margin-top: 1px; }
+        .grenzen-card.ok .gc-mark { color: var(--dkv); }
+        .grenzen-card.no .gc-mark { color: var(--red); }
+
+        /* ── Vorteile AN/AG ── */
+        .vorteile-section { background: var(--bg-light); }
+        .vorteile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .vorteile-col {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .vorteile-col-head {
+            padding: 22px 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .vorteile-col-head.an { background: linear-gradient(135deg, var(--dkv) 0%, #00a89d 100%); }
+        .vorteile-col-head.ag { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+        .vorteile-col-head .vc-icon { font-size: 1.8rem; }
+        .vorteile-col-head h3 { font-size: 1.2rem; }
+        .vorteile-col-head p { font-size: 0.82rem; opacity: 0.85; }
+        .vorteile-list { list-style: none; padding: 12px 30px 25px; background: var(--white); }
+        .vorteile-list li {
+            padding: 13px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .vorteile-list li:last-child { border-bottom: none; }
+        .vorteile-list .vl-check { color: var(--dkv); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+        .vorteile-col-head.ag ~ .vorteile-list .vl-check { color: var(--primary); }
+        .vorteile-list h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 1px; }
+        .vorteile-list p { font-size: 0.84rem; color: var(--text-light); line-height: 1.55; }
+
+        /* ── Anbieter DKV ── */
+        .dkv-section { background: var(--bg-light); }
+        .dkv-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-top: 30px;
+        }
+        .dkv-stat {
+            background: var(--bg-light);
+            border-radius: var(--radius-lg);
+            padding: 28px 22px;
+            text-align: center;
+            border-bottom: 3px solid var(--dkv);
+        }
+        .dkv-stat .ds-num { font-size: 1.9rem; font-weight: 800; color: var(--dkv); line-height: 1.1; }
+        .dkv-stat .ds-desc { font-size: 0.82rem; color: var(--text-light); margin-top: 8px; }
+        .dkv-awards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-top: 22px;
+        }
+        .dkv-award {
+            background: linear-gradient(135deg, var(--dkv-light) 0%, #d6efed 100%);
+            border-radius: var(--radius);
+            padding: 22px 26px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .dkv-award .da-icon { font-size: 2rem; flex-shrink: 0; }
+        .dkv-award h4 { font-size: 0.98rem; color: var(--dkv-dark); margin-bottom: 2px; }
+        .dkv-award p { font-size: 0.85rem; color: var(--text-light); }
+
+        /* ── Zielgruppe / Führungskräfte ── */
+        .zielgruppe-section { background: var(--bg-teal); }
+        .zg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .zg-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--dkv);
+        }
+        .zg-card .zg-icon {
+            width: 54px; height: 54px;
+            background: linear-gradient(135deg, var(--dkv) 0%, #00a89d 100%);
+            color: white;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+        .zg-card h3 { font-size: 1.12rem; color: var(--primary); margin-bottom: 8px; }
+        .zg-card p { font-size: 0.9rem; color: var(--text-light); }
+        .zg-stufen-note {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 22px 30px;
+            margin-top: 26px;
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            border-left: 4px solid #b8860b;
+        }
+        .zg-stufen-note .zs-icon { font-size: 1.8rem; flex-shrink: 0; }
+        .zg-stufen-note h4 { font-size: 1rem; color: var(--primary); margin-bottom: 2px; }
+        .zg-stufen-note p { font-size: 0.9rem; color: var(--text-light); }
+
+        /* ── Corporate Well-Being ── */
+        .wb-section { background: var(--white); }
+        .wb-pyramid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 30px;
+            max-width: 920px;
+        }
+        .wb-layer {
+            border-radius: var(--radius);
+            padding: 20px 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .wb-layer .wl-tag {
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(255,255,255,0.22);
+            padding: 5px 14px;
+            border-radius: 20px;
+            flex-shrink: 0;
+            min-width: 130px;
+            text-align: center;
+        }
+        .wb-layer h4 { font-size: 1.05rem; margin-bottom: 1px; }
+        .wb-layer p { font-size: 0.85rem; opacity: 0.9; }
+        .wb-layer.l1 { background: linear-gradient(135deg, #7fb8b3 0%, #95c6c1 100%); margin-right: 0; }
+        .wb-layer.l2 { background: linear-gradient(135deg, var(--dkv) 0%, #2a9d94 100%); margin-right: 7%; }
+        .wb-layer.l3 { background: linear-gradient(135deg, var(--dkv-dark) 0%, #b8860b 100%); margin-right: 14%; box-shadow: 0 6px 24px rgba(0,109,102,0.25); }
+        .wb-dims {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 35px;
+        }
+        .wb-dim {
+            background: var(--bg-light);
+            border-radius: var(--radius);
+            padding: 22px 20px;
+            text-align: center;
+        }
+        .wb-dim .wd-icon { font-size: 1.8rem; margin-bottom: 8px; }
+        .wb-dim h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 4px; }
+        .wb-dim p { font-size: 0.8rem; color: var(--text-light); }
+        .wb-dim.is-focus { background: var(--dkv-light); border: 1px solid rgba(0,133,124,0.25); }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: linear-gradient(135deg, #013b37 0%, var(--dkv-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 30px;
+        }
+        .cta-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 12px; }
+        .cta-section h2 em { color: #aef5ef; font-style: normal; }
+        .cta-section p { opacity: 0.9; max-width: 660px; margin: 0 auto 22px; }
+        .cta-contact {
+            display: inline-flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: var(--radius);
+            padding: 18px 30px;
+            font-size: 0.95rem;
+        }
+        .cta-contact strong { color: #aef5ef; }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 35px 30px;
+            text-align: center;
+            font-size: 0.82rem;
+        }
+        .footer-inner { max-width: 1300px; margin: 0 auto; }
+        .footer-divider { width: 50px; height: 2px; background: var(--dkv); margin: 12px auto; }
+
+        @media (max-width: 980px) {
+            .kpi-strip { grid-template-columns: 1fr; }
+            .intro-box { grid-template-columns: 1fr; }
+            .ablauf-timeline { grid-template-columns: 1fr 1fr; }
+            .erk-grid, .grenzen-grid, .vorteile-grid { grid-template-columns: 1fr; }
+            .dkv-stats { grid-template-columns: 1fr 1fr; }
+            .dkv-awards { grid-template-columns: 1fr; }
+            .zg-grid { grid-template-columns: 1fr; }
+            .wb-dims { grid-template-columns: 1fr 1fr; }
+            .wb-layer.l1, .wb-layer.l2, .wb-layer.l3 { margin-right: 0; }
+            .wb-layer { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .wb-layer .wl-tag { min-width: 0; }
+        }
+        @media (max-width: 600px) {
+            .header-badge { display: none; }
+            .hero { padding: 45px 20px 55px; }
+            .section { padding: 45px 20px; }
+            .ablauf-timeline { grid-template-columns: 1fr; }
+        }
+        @media print {
+            .header { position: relative; }
+            .section { padding: 30px 15px; }
+            .leist-card, .erk-col, .grenzen-card, .vorteile-col, .ablauf-step { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="header-inner">
+        <a href="https://ventana-deutschland.de/" class="logo" style="display:inline-flex;align-items:center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="180" height="45" viewBox="0 0 220.342 54.765" style="display:block;">
+                <g transform="translate(0 0)">
+                    <path d="M91.1,95.524a24.676,24.676,0,0,1-11.762,5.785h9.391l4.709-8.156.02-.033c-.033.04-.066.08-.1.126A13.089,13.089,0,0,1,91.1,95.524Z" transform="translate(-44.06 -50.436)" fill="#004899"/>
+                    <path d="M46.358,37.855A24.743,24.743,0,0,1,58.113,32.07H48.722l-4.709,8.156L44,40.259a1.459,1.459,0,0,0,.093-.12A13.65,13.65,0,0,1,46.358,37.855Z" transform="translate(-32.191 -29.932)" fill="#004899"/>
+                    <path d="M107.6,56.53a24.794,24.794,0,0,1,0,16.245l4.689-8.122Z" transform="translate(-53.551 -38.147)" fill="#004899"/>
+                    <path d="M93.37,40.139a1.459,1.459,0,0,0,.093.12l-.02-.033L88.735,32.07H79.35A24.691,24.691,0,0,1,91.1,37.855,13.442,13.442,0,0,1,93.37,40.139Z" transform="translate(-44.063 -29.932)" fill="#004899"/>
+                    <path d="M30.38,52.992,40.156,36.05A28.237,28.237,0,0,0,30.38,52.992Z" transform="translate(-27.617 -31.269)" fill="#004899"/>
+                    <path d="M40.156,92.9,30.38,75.96A28.237,28.237,0,0,0,40.156,92.9Z" transform="translate(-27.617 -44.672)" fill="#004899"/>
+                    <path d="M34.619,56.53,29.93,64.652l4.689,8.122a24.794,24.794,0,0,1,0-16.245Z" transform="translate(-27.466 -38.147)" fill="#004899"/>
+                    <path d="M67.343,110.427a28.218,28.218,0,0,0,9.8-1.747H57.54A28.373,28.373,0,0,0,67.343,110.427Z" transform="translate(-36.739 -55.662)" fill="#004899"/>
+                    <path d="M99.5,36.05l9.776,16.942A28.237,28.237,0,0,0,99.5,36.05Z" transform="translate(-50.831 -31.269)" fill="#004899"/>
+                    <path d="M109.276,75.97,99.5,92.906A28.24,28.24,0,0,0,109.276,75.97Z" transform="translate(-50.831 -44.676)" fill="#004899"/>
+                    <path d="M44.1,93.253c-.033-.04-.066-.086-.1-.133l.02.033,4.709,8.156H58.12a24.686,24.686,0,0,1-11.762-5.791A13.247,13.247,0,0,1,44.1,93.253Z" transform="translate(-32.191 -50.436)" fill="#004899"/>
+                    <path d="M83.28,49.562h0a9.411,9.411,0,0,1,8.867,6.283A11.37,11.37,0,0,0,76.99,40.7,9.386,9.386,0,0,1,83.28,49.562Z" transform="translate(-43.271 -32.46)" fill="#f59c00"/>
+                    <path d="M53.106,79.743a9.393,9.393,0,0,1-8.86-6.283A11.357,11.357,0,0,0,59.389,88.6,9.393,9.393,0,0,1,53.106,79.743Z" transform="translate(-31.906 -43.833)" fill="#f59c00"/>
+                    <path d="M83.286,79.743A9.4,9.4,0,0,1,77.01,88.6,11.369,11.369,0,0,0,92.153,73.46,9.408,9.408,0,0,1,83.286,79.743Z" transform="translate(-43.277 -43.833)" fill="#f59c00"/>
+                    <path d="M53.106,49.562h0A9.392,9.392,0,0,1,59.4,40.7,11.376,11.376,0,0,0,44.246,55.845,9.393,9.393,0,0,1,53.106,49.562Z" transform="translate(-31.906 -32.46)" fill="#f59c00"/>
+                    <path d="M40.795,62.093A13.534,13.534,0,0,1,39.22,48.91L36.3,53.971a24.794,24.794,0,0,0,0,16.245l2.922,5.061a13.534,13.534,0,0,1,1.574-13.183Z" transform="translate(-29.146 -35.587)" fill="#f59c00"/>
+                    <path d="M105.326,53.971,102.4,48.91a13.534,13.534,0,0,1-1.574,13.183A13.534,13.534,0,0,1,102.4,75.276l2.922-5.061a24.794,24.794,0,0,0,0-16.245Z" transform="translate(-51.277 -35.587)" fill="#f59c00"/>
+                    <path d="M72.021,99.665a13.435,13.435,0,0,1-8.036-2.65A13.51,13.51,0,0,1,47.54,96.73,24.716,24.716,0,0,0,59.3,102.521h9.365a24.766,24.766,0,0,0,11.762-5.785A13.488,13.488,0,0,1,72.021,99.665Z" transform="translate(-33.38 -51.648)" fill="#f59c00"/>
+                    <path d="M55.952,34.926a13.474,13.474,0,0,1,8.036,2.643,13.526,13.526,0,0,1,16.438.286A24.811,24.811,0,0,0,68.677,32.07H59.306A24.743,24.743,0,0,0,47.55,37.855,13.455,13.455,0,0,1,55.952,34.926Z" transform="translate(-33.384 -29.932)" fill="#f59c00"/>
+                    <path d="M80.341,57.878a13.534,13.534,0,0,0,1.574-13.183l-1.733-3c-.033-.04-.06-.08-.093-.12a13.65,13.65,0,0,0-2.265-2.285A13.526,13.526,0,0,0,61.385,39a13.526,13.526,0,0,0-16.438.286,13.65,13.65,0,0,0-2.265,2.285,1.459,1.459,0,0,0-.093.12l-1.733,3A13.534,13.534,0,0,0,42.43,57.878a13.534,13.534,0,0,0-1.574,13.183l1.727,3c.033.046.066.086.1.133a13.513,13.513,0,0,0,18.7,2.557,13.514,13.514,0,0,0,18.7-2.557c.033-.04.066-.08.1-.126l1.733-3a13.528,13.528,0,0,0,1.036-5.2A13.375,13.375,0,0,0,80.341,57.878ZM69.382,77.251a11.286,11.286,0,0,1-4.868-1.109,9.237,9.237,0,0,1-6.25,0A11.369,11.369,0,0,1,43.121,61a9.218,9.218,0,0,1,0-6.243A11.374,11.374,0,0,1,53.4,38.512a11.432,11.432,0,0,1,4.882,1.1,9.268,9.268,0,0,1,6.223,0A11.372,11.372,0,0,1,79.656,54.75a9.217,9.217,0,0,1,0,6.243A11.385,11.385,0,0,1,69.382,77.251Z" transform="translate(-30.788 -31.372)" fill="#c51a1b"/>
+                    <path d="M72.194,68.653a9.4,9.4,0,0,0,0-18.808h0a9.4,9.4,0,0,0-6.29-8.866,9.268,9.268,0,0,0-6.223,0,9.413,9.413,0,0,0-6.3,8.866h0a9.4,9.4,0,0,0,0,18.808,9.4,9.4,0,0,0,18.809,0Zm-8.8,7.226a5.516,5.516,0,0,1-1.209,0,7.117,7.117,0,0,1-5.811-10.221,7.118,7.118,0,0,1-10.221-5.8c-.02-.2-.033-.405-.033-.611s.013-.412.033-.611a7.118,7.118,0,0,1,10.221-5.8,7.117,7.117,0,0,1,5.818-10.221c.193-.013.392-.027.591-.027s.4.013.6.027a7.117,7.117,0,0,1,5.811,10.221,7.118,7.118,0,0,1,10.221,5.8c.02.2.033.405.033.611s-.013.405-.033.611a7.118,7.118,0,0,1-10.221,5.8,7.118,7.118,0,0,1-5.8,10.221Z" transform="translate(-32.185 -32.743)" fill="#009760"/>
+                    <path d="M70.283,66.749a7.118,7.118,0,0,0,10.221-5.8c.02-.2.033-.405.033-.611s-.013-.405-.033-.611a7.118,7.118,0,0,0-10.221-5.8A7.117,7.117,0,0,0,64.472,43.7a5.912,5.912,0,0,0-.6-.027c-.2,0-.4.013-.591.027a7.117,7.117,0,0,0-5.818,10.221,7.118,7.118,0,0,0-10.221,5.8c-.02.2-.033.405-.033.611s.013.405.033.611a7.118,7.118,0,0,0,10.221,5.8A7.117,7.117,0,0,0,63.276,76.97a5.516,5.516,0,0,0,1.209,0,7.106,7.106,0,0,0,5.8-10.221ZM54.715,64.763H52.889a10.985,10.985,0,0,1,21.971,0H54.715Z" transform="translate(-33.27 -33.828)" fill="#d0e5de"/>
+                    <path d="M84.666,50.574,74.89,33.632,72.127,28.85h-30.6l-2.763,4.782L28.983,50.574,26.22,55.356l2.763,4.782L38.759,77.08l2.763,4.782h30.6L74.89,77.08l9.776-16.942,2.763-4.788Zm-4.4,12.9-2.922,5.061-1.733,3-.02.033-4.709,8.156H42.751l-4.709-8.156-.013-.033-1.727-3L33.38,63.478l-4.689-8.122,4.689-8.122L36.3,42.173l1.727-3,.02-.033,4.709-8.156H70.9l4.709,8.156.02.033,1.733,3,2.922,5.061,4.689,8.122Z" transform="translate(-26.22 -28.85)" fill="#ffdb00"/>
+                    <path d="M67.763,61.64a9.156,9.156,0,0,0-8.973,7.332H76.736A9.156,9.156,0,0,0,67.763,61.64Z" transform="translate(-37.158 -39.862)" fill="#a8bbcf"/>
+                    <path d="M77.731,69.875a10.985,10.985,0,0,0-21.971,0H77.731ZM57.772,68.048a9.156,9.156,0,0,1,17.946,0Z" transform="translate(-36.141 -38.939)" fill="#004899"/>
+                    <path d="M142.511,49.95l7.7,23.112,7.552-23.112h2.271l-8.86,25.921H149.02L140.2,49.95Z" transform="translate(-64.499 -35.937)"/>
+                    <path d="M188.652,61.387v1.926h-10.48v10.4h11.4v1.926h-13.6V49.95h13.443v1.926H178.172v9.51Z" transform="translate(-76.515 -35.937)"/>
+                    <path d="M206.821,49.95l12.945,22.494V49.95H221.8v25.7h-2.544L206.469,53.224V75.646H204.39V49.95Z" transform="translate(-86.056 -35.937)"/>
+                    <path d="M252.538,49.95v1.926H245.91v23.77h-2.192V51.876H237.05V49.95Z" transform="translate(-97.025 -35.937)"/>
+                    <path d="M270.673,49.66l8.9,25.882h-2.311l-2.5-7.279H264.9l-2.544,7.279H260.08l8.9-25.882Zm-.85,3.121-4.317,13.562h8.588Z" transform="translate(-104.76 -35.839)"/>
+                    <path d="M298.351,49.95,311.3,72.444V49.95h2.039v25.7h-2.544L298,53.224V75.646H295.92V49.95Z" transform="translate(-116.795 -35.937)"/>
+                    <path d="M339.223,49.66l8.9,25.882h-2.311l-2.5-7.279h-9.863L330.9,75.542H328.63l8.9-25.882Zm-.843,3.121-4.317,13.562h8.588Z" transform="translate(-127.781 -35.839)"/>
+                </g>
+            </svg>
+        </a>
+        <div class="header-badge">DKV BestCare &mdash; Premium-Baustein der bKV</div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-eyebrow">F&uuml;hrungskr&auml;fte-Konzept &middot; Einzelbaustein BBCK</div>
+        <h1>DKV BestCare &mdash; <em>Spitzenabsicherung f&uuml;r Ihre Leistungs- und Verantwortungstr&auml;ger</em></h1>
+        <p class="hero-subtitle">
+            Die Premium-Stufe des bKV-Konzepts der Ventana Deutschland: gezielter Spitzenschutz f&uuml;r F&uuml;hrungskr&auml;fte und langj&auml;hrige Mitarbeitende. Bei einer schweren, station&auml;r behandlungsbed&uuml;rftigen Diagnose organisiert die DKV innerhalb weniger Tage einen pers&ouml;nlichen Termin bei einem anerkannten Top-Experten &mdash; mit ausf&uuml;hrlicher Zweitmeinung und pers&ouml;nlicher Begleitung.
+        </p>
+
+        <div class="kpi-strip">
+            <div class="kpi-card">
+                <div class="kpi-num">5</div>
+                <div class="kpi-unit">Werktage</div>
+                <div class="kpi-desc">bis zum pers&ouml;nlichen Termin beim Top-Experten</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-num">500 &euro;</div>
+                <div class="kpi-unit">Aufwandspauschale</div>
+                <div class="kpi-desc">zur freien Verf&uuml;gung, z.&nbsp;B. f&uuml;r die Anreise</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-num">~100</div>
+                <div class="kpi-unit">Top-Experten</div>
+                <div class="kpi-desc">anerkannte Spezialisten, gepr&uuml;ft vom Scientific Board</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Zielgruppe / Führungskräfte -->
+<section class="section zielgruppe-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">F&uuml;r wen?</span>
+        <h2>Ein Baustein f&uuml;r die, die Verantwortung tragen &mdash; und die, die geblieben sind</h2>
+        <p class="lead">BestCare ist als <strong>Premium-Stufe</strong> konzipiert: eine bewusste Spitzenabsicherung f&uuml;r F&uuml;hrungskr&auml;fte, Schl&uuml;sselpersonen und langj&auml;hrige Mitarbeitende. Genau dort, wo der Ausfall am schwersten wiegt und die Betriebstreue am gr&ouml;&szlig;ten ist, schafft sie Sicherheit.</p>
+
+        <div class="zg-grid">
+            <div class="zg-card">
+                <div class="zg-icon">&#128081;</div>
+                <h3>F&uuml;hrungskr&auml;fte &amp; Leistungstr&auml;ger</h3>
+                <p>Sie tragen Verantwortung, stehen unter hoher Belastung und sind im Ernstfall am schwersten zu ersetzen. Die richtige Behandlung beim richtigen Experten bringt sie schneller und sicherer zur&uuml;ck.</p>
+            </div>
+            <div class="zg-card">
+                <div class="zg-icon">&#127881;</div>
+                <h3>Langj&auml;hrige Mitarbeitende</h3>
+                <p>Betriebstreue verdient eine sichtbare Anerkennung. Als h&ouml;chste Treuestufe (&gt; 10 Jahre Zugeh&ouml;rigkeit) belohnt BestCare Loyalit&auml;t mit einem Schutz, der im entscheidenden Moment greift.</p>
+            </div>
+            <div class="zg-card">
+                <div class="zg-icon">&#128273;</div>
+                <h3>Schl&uuml;ssel- &amp; Know-how-Tr&auml;ger</h3>
+                <p>Mit ihnen steht und f&auml;llt wertvolles Wissen im Unternehmen. Gezielte Top-Absicherung bindet diese Personen und sichert zugleich die Kontinuit&auml;t der Ventana Deutschland.</p>
+            </div>
+        </div>
+
+        <div class="zg-stufen-note">
+            <span class="zs-icon">&#129351;</span>
+            <div>
+                <h4>Die Spitze des Stufenmodells</h4>
+                <p>Im 3-Stufen-Modell der Ventana Deutschland bildet BestCare die <strong>Premium-Stufe (Stufe&nbsp;3)</strong> &mdash; aufbauend auf dem 300-&euro;-Budget f&uuml;r alle und dem erweiterten Schutz. So entsteht ein faires, gestaffeltes Konzept: Grundschutz f&uuml;r jeden, Spitzenabsicherung f&uuml;r Verantwortung und Treue.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Was ist BestCare -->
+<section class="section intro-section" style="background: var(--white);">
+    <div class="section-inner">
+        <span class="section-eyebrow">Was ist BestCare?</span>
+        <h2>Mehr als eine Zweitmeinung &mdash; ein medizinischer Lotse im Ernstfall</h2>
+        <p class="lead">BestCare ist der herausragende Einzelbaustein (Tarif BBCK) im bKV-Portfolio der DKV. Er verschafft Mitarbeitenden bei schweren Diagnosen schnellen, organisierten Zugang zu den besten Spezialisten Deutschlands &mdash; inklusive qualifizierter Zweitmeinung und pers&ouml;nlicher Begleitung durch den gesamten Prozess.</p>
+
+        <div class="intro-box">
+            <div class="intro-left">
+                <span class="ib-badge">Im Fokus</span>
+                <h3>Wenn die Diagnose alles ver&auml;ndert &mdash; z&auml;hlt jeder Tag und jede zweite Meinung</h3>
+                <p>Eine schwere Erkrankung wirft Fragen auf, die niemand allein beantworten kann: Ist die Diagnose richtig? Gibt es eine bessere Therapie? Wer ist der beste Arzt daf&uuml;r? BestCare nimmt diese Last ab &mdash; mit einem geschulten Betreuer, der den Weg zum richtigen Spezialisten organisiert.</p>
+            </div>
+            <div class="intro-right">
+                <div class="intro-feat">
+                    <div class="if-icon">&#128269;</div>
+                    <div><h4>Diagnose absichern</h4><p>Qualifizierte Zweitmeinung eines anerkannten Top-Experten zur gestellten Diagnose und Therapie.</p></div>
+                </div>
+                <div class="intro-feat">
+                    <div class="if-icon">&#128197;</div>
+                    <div><h4>Schnell zum Spezialisten</h4><p>Pers&ouml;nlicher Termin innerhalb von nur f&uuml;nf Werktagen &mdash; ohne monatelange Wartezeit.</p></div>
+                </div>
+                <div class="intro-feat">
+                    <div class="if-icon">&#129309;</div>
+                    <div><h4>Pers&ouml;nliche Begleitung</h4><p>Ein speziell geschulter Betreuer steht w&auml;hrend des gesamten Prozesses zur Seite.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ablauf -->
+<section class="section ablauf-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Ablauf</span>
+        <h2>So funktioniert BestCare &mdash; Schritt f&uuml;r Schritt</h2>
+        <p class="lead">Von der gesicherten Diagnose bis zur Zweitmeinung beim Top-Experten &mdash; ein klar strukturierter, begleiteter Prozess.</p>
+
+        <div class="ablauf-timeline">
+            <div class="ablauf-step">
+                <div class="as-num">1</div>
+                <h4>Diagnose</h4>
+                <p>Fach&auml;rztlich gesicherte, schwere und station&auml;r behandlungs&shy;bed&uuml;rftige Erkrankung.</p>
+            </div>
+            <div class="ablauf-step">
+                <div class="as-num">2</div>
+                <h4>Kontakt</h4>
+                <p>Anruf beim speziell geschulten Serviceteam BestCare der DKV.</p>
+            </div>
+            <div class="ablauf-step">
+                <div class="as-num">3</div>
+                <h4>Termin in 5 WT</h4>
+                <p>Pers&ouml;nlicher Termin bei einem Top-Experten innerhalb von f&uuml;nf Werktagen.</p>
+            </div>
+            <div class="ablauf-step">
+                <div class="as-num">4</div>
+                <h4>Zweitmeinung</h4>
+                <p>Ausf&uuml;hrliche Empfehlung; bei Bedarf Behandlung oder OP durch den Experten.</p>
+            </div>
+            <div class="ablauf-step accent">
+                <div class="as-num">5</div>
+                <h4>500 &euro; Pauschale</h4>
+                <p>Aufwandspauschale zur freien Verf&uuml;gung, z.&nbsp;B. f&uuml;r die Anreise.</p>
+            </div>
+        </div>
+
+        <div class="ablauf-note">
+            <span class="an-icon">&#129489;&zwj;&#9877;&#65039;</span>
+            <p><strong>Pers&ouml;nlicher Betreuer:</strong> Jede versicherte Person erh&auml;lt einen speziell geschulten Betreuer, der den gesamten Prozess begleitet &mdash; mit ausreichend Zeit f&uuml;r alle Fragen im Ernstfall.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Leistungen -->
+<section class="section leist-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Leistungen</span>
+        <h2>Was BestCare konkret bietet</h2>
+        <p class="lead">F&uuml;nf Kernleistungen, die im Ernstfall den Unterschied machen.</p>
+
+        <div class="leist-grid">
+            <div class="leist-card">
+                <div class="lc-icon">&#128342;</div>
+                <h4>Schneller Spezialisten-Termin</h4>
+                <p>Terminvereinbarung bei einem anerkannten Top-Experten innerhalb von nur f&uuml;nf Werktagen (Mo&ndash;Fr).</p>
+            </div>
+            <div class="leist-card">
+                <div class="lc-icon">&#128172;</div>
+                <h4>Qualifizierte Zweitmeinung</h4>
+                <p>Ausf&uuml;hrliche Empfehlung und Zweitmeinung zur Therapie; bei Bedarf f&uuml;hrt der Experte die Behandlung oder OP selbst durch.</p>
+            </div>
+            <div class="leist-card">
+                <div class="lc-icon">&#128176;</div>
+                <h4>500 &euro; Aufwandspauschale</h4>
+                <p>Steht zur freien Verf&uuml;gung &mdash; etwa f&uuml;r die Anreise zum Spezialisten oder weitere Aufwendungen.</p>
+            </div>
+            <div class="leist-card">
+                <div class="lc-icon">&#129309;</div>
+                <h4>Pers&ouml;nlicher Betreuer</h4>
+                <p>Speziell geschultes Serviceteam mit ausreichend Zeit f&uuml;r alle Fragen im Ernstfall.</p>
+            </div>
+            <div class="leist-card">
+                <div class="lc-icon">&#127891;</div>
+                <h4>Gepr&uuml;fte Qualit&auml;t</h4>
+                <p>Ein wissenschaftlicher Beirat (Scientific Board) sichert das hohe Niveau der rund 100 Experten.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Versicherte Erkrankungen -->
+<section class="section erk-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Absicherung</span>
+        <h2>Versicherte Erkrankungen (Auszug)</h2>
+        <p class="lead">BestCare greift bei schweren, station&auml;r behandlungsbed&uuml;rftigen Erkrankungen &mdash; differenziert nach Lebensalter.</p>
+
+        <div class="erk-grid">
+            <div class="erk-col">
+                <div class="erk-col-head adult">
+                    <span class="ec-icon">&#129485;</span>
+                    <div>
+                        <h3>Ab dem vollendeten 20. Lebensjahr</h3>
+                        <p>Schwere Erkrankungen im Erwachsenenalter</p>
+                    </div>
+                </div>
+                <ul class="erk-list">
+                    <li><span class="el-check">&#10003;</span> B&ouml;sartige Tumorerkrankungen (z.&nbsp;B. Lunge, Darm, Brust)</li>
+                    <li><span class="el-check">&#10003;</span> Gutartige Tumoren des Nervensystems</li>
+                    <li><span class="el-check">&#10003;</span> Herzerkrankungen (z.&nbsp;B. verengte Herzkranzgef&auml;&szlig;e, Rhythmusst&ouml;rungen)</li>
+                    <li><span class="el-check">&#10003;</span> Arterielle Gef&auml;&szlig;erkrankungen</li>
+                    <li><span class="el-check">&#10003;</span> Wirbels&auml;ule mit Nervenbeeintr&auml;chtigung (z.&nbsp;B. Bandscheibenvorfall)</li>
+                    <li><span class="el-check">&#10003;</span> Knie- und Schultergelenk (z.&nbsp;B. Arthrose, Kreuzbandriss)</li>
+                    <li><span class="el-check">&#10003;</span> Komplikationen nach Unfallverletzungen</li>
+                </ul>
+            </div>
+
+            <div class="erk-col">
+                <div class="erk-col-head child">
+                    <span class="ec-icon">&#129496;</span>
+                    <div>
+                        <h3>Bis zum vollendeten 20. Lebensjahr</h3>
+                        <p>Erkrankungen bei Kindern &amp; Jugendlichen</p>
+                    </div>
+                </div>
+                <ul class="erk-list">
+                    <li><span class="el-check">&#10003;</span> Angeborene Fehlbildungen (z.&nbsp;B. Herzklappenfehler)</li>
+                    <li><span class="el-check">&#10003;</span> B&ouml;sartige Tumorerkrankungen (z.&nbsp;B. Blutkrebs)</li>
+                    <li><span class="el-check">&#10003;</span> Chronische Erkrankungen (Diabetes, Rheuma, Asthma, Epilepsie, Morbus Crohn)</li>
+                    <li><span class="el-check">&#10003;</span> Komplikationen nach Unfallverletzungen</li>
+                </ul>
+                <div style="padding: 0 30px 24px;">
+                    <div class="erk-precond" style="margin-top: 8px;">
+                        <span class="ep-icon">&#9888;&#65039;</span>
+                        <div><strong>Voraussetzung:</strong> fach&auml;rztlich gesicherte Diagnose und station&auml;re Behandlungsbed&uuml;rftigkeit.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Voraussetzungen & Grenzen -->
+<section class="section grenzen-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Wichtig zu wissen</span>
+        <h2>Voraussetzungen und Grenzen &mdash; transparent dargestellt</h2>
+        <p class="lead">Damit das Leistungsversprechen verl&auml;sslich bleibt, gelten klare Voraussetzungen. Ebenso transparent: was BestCare bewusst nicht abdeckt.</p>
+
+        <div class="grenzen-grid">
+            <div class="grenzen-card ok">
+                <h3>&#9989; Voraussetzungen</h3>
+                <ul>
+                    <li><span class="gc-mark">&#10003;</span> Fach&auml;rztlich gesicherte Diagnose (Vordiagnostik wie MRT oder R&ouml;ntgen liegt vor).</li>
+                    <li><span class="gc-mark">&#10003;</span> Station&auml;re Krankenhausbehandlung ist medizinisch angezeigt.</li>
+                    <li><span class="gc-mark">&#10003;</span> Kombination mit Krankenhaus-Schutz erforderlich: Chefarzt mind. bis GO&Auml;-H&ouml;chstsatz, mind. Zweibettzimmer.</li>
+                </ul>
+            </div>
+            <div class="grenzen-card no">
+                <h3>&#10060; Nicht abgedeckt</h3>
+                <ul>
+                    <li><span class="gc-mark">&times;</span> Akute Notf&auml;lle mit sofortigem Handlungsbedarf (z.&nbsp;B. Herzinfarkt, Schlaganfall, Unfall).</li>
+                    <li><span class="gc-mark">&times;</span> Erkrankungen, deren station&auml;re Behandlung bereits vor Vertragsabschluss besprochen war.</li>
+                    <li><span class="gc-mark">&times;</span> Reine ambulante Facharzttermine ohne station&auml;re Behandlungsbed&uuml;rftigkeit.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vorteile AN / AG -->
+<section class="section vorteile-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Der Mehrwert</span>
+        <h2>Vorteile f&uuml;r Mitarbeitende &amp; f&uuml;r das Unternehmen</h2>
+        <p class="lead">BestCare wirkt als Sicherheitsversprechen f&uuml;r die Belegschaft &mdash; und als starkes Differenzierungsmerkmal f&uuml;r die Arbeitgebermarke der Ventana Deutschland.</p>
+
+        <div class="vorteile-grid">
+            <div class="vorteile-col">
+                <div class="vorteile-col-head an">
+                    <span class="vc-icon">&#128106;</span>
+                    <div>
+                        <h3>F&uuml;r Arbeitnehmende</h3>
+                        <p>Sicherheit im Moment, der z&auml;hlt</p>
+                    </div>
+                </div>
+                <ul class="vorteile-list">
+                    <li><span class="vl-check">&#10003;</span><div><h4>Top-Experten im Ernstfall</h4><p>Schnelle Vermittlung und qualifizierte Zweitmeinung bei schweren Diagnosen &mdash; deutschlandweit.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Gewissheit statt Unsicherheit</h4><p>Eine zweite, fundierte Meinung gibt Sicherheit bei wegweisenden Therapieentscheidungen.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Organisation abgenommen</h4><p>Termin, Krankenhausaufenthalt und OP beim Spezialisten werden organisiert &mdash; emotionale Entlastung im Ausnahmezustand.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>500 &euro; ohne Verwendungsnachweis</h4><p>Pauschale zur freien Verf&uuml;gung f&uuml;r Anreise und Nebenkosten.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Voller Wert, keine Abz&uuml;ge</h4><p>Als Teil der bKV bis 50 &euro;/Monat steuer- und sozialabgabenfrei &mdash; die Leistung kommt ungeschm&auml;lert an.</p></div></li>
+                </ul>
+            </div>
+
+            <div class="vorteile-col">
+                <div class="vorteile-col-head ag">
+                    <span class="vc-icon">&#127970;</span>
+                    <div>
+                        <h3>F&uuml;r die Ventana Deutschland</h3>
+                        <p>Differenzierung mit Substanz</p>
+                    </div>
+                </div>
+                <ul class="vorteile-list">
+                    <li><span class="vl-check">&#10003;</span><div><h4>Klares Differenzierungsmerkmal</h4><p>Der schnelle Zugang zu Top-Experten hebt das Benefit-Angebot sichtbar vom Markt ab &mdash; ein starkes Recruiting-Argument.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>St&auml;rkere Mitarbeiterbindung</h4><p>Ein Sicherheitsversprechen f&uuml;r den Ernstfall schafft Loyalit&auml;t, die eine Gehaltskomponente nicht erzeugt.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Schnellere R&uuml;ckkehr</h4><p>Die richtige Behandlung beim richtigen Experten kann Genesungswege verk&uuml;rzen und Ausfallzeiten reduzieren.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Steuerlich abzugsf&auml;hig</h4><p>Beitr&auml;ge sind als Betriebsausgabe abzugsf&auml;hig und mindern den steuerlichen Gewinn.</p></div></li>
+                    <li><span class="vl-check">&#10003;</span><div><h4>Geringer Aufwand</h4><p>Einfache Einbindung als Baustein &uuml;ber den bestehenden bKV-Gruppenvertrag.</p></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Corporate Well-Being -->
+<section class="section wb-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Die gr&ouml;&szlig;ere Strategie</span>
+        <h2>BestCare als Spitze einer Corporate-Well-Being-Strategie</h2>
+        <p class="lead">BestCare entfaltet die gr&ouml;&szlig;te Wirkung, wenn es nicht isoliert steht, sondern Teil eines durchdachten betrieblichen Gesundheitskonzepts ist. Vom Grundschutz f&uuml;r alle bis zur Spitzenabsicherung f&uuml;r Verantwortungstr&auml;ger &mdash; gesundes Arbeiten als strategischer Faktor f&uuml;r Bindung und Arbeitgebermarke.</p>
+
+        <div class="wb-pyramid">
+            <div class="wb-layer l1">
+                <span class="wl-tag">Basis &middot; alle</span>
+                <div>
+                    <h4>Pr&auml;vention &amp; 300-&euro;-Budget</h4>
+                    <p>Gesundheitsbudget f&uuml;r jeden Mitarbeitenden &mdash; t&auml;glich erlebbarer Mehrwert, Vorsorge und Prävention als Fundament.</p>
+                </div>
+            </div>
+            <div class="wb-layer l2">
+                <span class="wl-tag">Treue &middot; Aufbau</span>
+                <div>
+                    <h4>Erweiterter Schutz</h4>
+                    <p>Zahn, station&auml;re Zusatzleistungen und Chefarzt &mdash; honoriert wachsende Betriebszugeh&ouml;rigkeit.</p>
+                </div>
+            </div>
+            <div class="wb-layer l3">
+                <span class="wl-tag">Spitze &middot; BestCare</span>
+                <div>
+                    <h4>Spitzenabsicherung im Ernstfall</h4>
+                    <p>Top-Experten-Zugang f&uuml;r F&uuml;hrungskr&auml;fte und langj&auml;hrige Mitarbeitende &mdash; das Sicherheitsversprechen, das den Unterschied macht.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="margin-top:45px;font-size:1.15rem;color:var(--primary);">Vier Dimensionen betrieblichen Wohlbefindens &mdash; BestCare st&auml;rkt die k&ouml;rperliche Absicherung</h3>
+        <div class="wb-dims">
+            <div class="wb-dim is-focus">
+                <div class="wd-icon">&#128147;</div>
+                <h4>K&ouml;rperliche Gesundheit</h4>
+                <p>Top-Versorgung im Ernstfall, schnelle Behandlung, Pr&auml;vention &mdash; <strong>hier setzt BestCare an.</strong></p>
+            </div>
+            <div class="wb-dim">
+                <div class="wd-icon">&#129504;</div>
+                <h4>Mentale St&auml;rke</h4>
+                <p>Sicherheit und Gewissheit bei schweren Diagnosen entlasten emotional und nehmen Druck.</p>
+            </div>
+            <div class="wb-dim">
+                <div class="wd-icon">&#128176;</div>
+                <h4>Finanzielle Sicherheit</h4>
+                <p>Privat&auml;rztliche Leistungen ohne Eigeninvestition &mdash; steuerlich begünstigt bis 50 &euro;/Monat.</p>
+            </div>
+            <div class="wb-dim">
+                <div class="wd-icon">&#129309;</div>
+                <h4>Soziale Bindung</h4>
+                <p>Wertsch&auml;tzung und F&uuml;rsorge st&auml;rken die Verbundenheit mit der Ventana Deutschland.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Anbieter DKV -->
+<section class="section dkv-section">
+    <div class="section-inner">
+        <span class="section-eyebrow">Der Anbieter</span>
+        <h2>Die DKV &mdash; Gesundheitskompetenz aus fast einem Jahrhundert</h2>
+        <p class="lead">BestCare ist nur so gut wie der Partner dahinter. Die DKV geh&ouml;rt zu den &auml;ltesten und am besten bewerteten Krankenversicherern Deutschlands.</p>
+
+        <div class="dkv-stats">
+            <div class="dkv-stat">
+                <div class="ds-num">1927</div>
+                <div class="ds-desc">in Berlin gegr&uuml;ndet &mdash; einer der &auml;ltesten Krankenversicherer Deutschlands</div>
+            </div>
+            <div class="dkv-stat">
+                <div class="ds-num">Marktf&uuml;hrer</div>
+                <div class="ds-desc">in der privaten Krankenzusatz&shy;versicherung in Deutschland</div>
+            </div>
+            <div class="dkv-stat">
+                <div class="ds-num">4,6 / 5</div>
+                <div class="ds-desc">eKomi-Kundenbewertung aus rund 64.000 Bewertungen</div>
+            </div>
+            <div class="dkv-stat">
+                <div class="ds-num">~100</div>
+                <div class="ds-desc">anerkannte Top-Experten im BestCare-Spezialistennetzwerk</div>
+            </div>
+        </div>
+
+        <div class="dkv-awards">
+            <div class="dkv-award">
+                <span class="da-icon">&#127942;</span>
+                <div>
+                    <h4>IVFP Kompetenz-Rating bKV 2024</h4>
+                    <p>Gesamturteil &bdquo;Exzellent&ldquo; (Bestnote) im Vergleich von 16 bKV-Anbietern &uuml;ber 75+ Kriterien.</p>
+                </div>
+            </div>
+            <div class="dkv-award">
+                <span class="da-icon">&#11088;</span>
+                <div>
+                    <h4>ServiceValue Fairness 2023</h4>
+                    <p>Auszeichnung &bdquo;Sehr gut&ldquo; in der Wettbewerbsanalyse zur Fairness von bKV-Anbietern.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <h2>BestCare &mdash; <em>der Schutz f&uuml;r den Moment, der wirklich z&auml;hlt</em></h2>
+    <p>Schneller Zugang zu Top-Experten, eine qualifizierte Zweitmeinung und pers&ouml;nliche Begleitung im Ernstfall: BestCare hebt das bKV-Angebot der Ventana Deutschland klar vom Markt ab &mdash; bei &uuml;berschaubarem Aufwand und voller steuerlicher Effizienz.</p>
+    <div class="cta-contact">
+        <span>&#128222; Best Care Hotline: <strong>0800 3746-065</strong></span>
+        <span>&#9993;&#65039; <strong>Bestcare@dkv.com</strong></span>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <p style="font-size: 0.75rem; opacity: 0.5;">
+            Unverbindliche Informationsunterlage. Tarif- und Leistungsangaben gem&auml;&szlig; DKV-Produktinformationen (KombiMed BestCare / Tarifbaustein BBCK); &Auml;nderungen vorbehalten. Versicherte Erkrankungen als Auszug. Quellen: DKV-Produktinformationen, BestCare-Leistungsbeschreibung &amp; FAQ; IVFP Kompetenz-Rating bKV 2024; ServiceValue 2023; eKomi. Keine steuer- oder versicherungsrechtliche Beratung im Einzelfall. Stand: Juni 2026.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
